@@ -1,0 +1,574 @@
+[
+    {
+        "id": "0bd8457dda61dcf8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cbcb4239ed62258f",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "59345bd6119f3ab3",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "c0c88598f376b790",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "cbcb4239ed62258f",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "39a5dd8d0dadac75",
+        "type": "http request",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "method": "GET",
+        "ret": "bin",
+        "paytoqs": "ignore",
+        "url": "http://localhost/plastone/angle.bin",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Range",
+                "valueType": "other",
+                "valueValue": "bytes=-10"
+            }
+        ],
+        "x": 330,
+        "y": 80,
+        "wires": [
+            [
+                "65de3f1dbdd4feb4"
+            ]
+        ]
+    },
+    {
+        "id": "da1939a2086e85ad",
+        "type": "debug",
+        "z": "0bd8457dda61dcf8",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "0ae0ea400dabb5f5",
+        "type": "inject",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 80,
+        "wires": [
+            [
+                "39a5dd8d0dadac75"
+            ]
+        ]
+    },
+    {
+        "id": "65de3f1dbdd4feb4",
+        "type": "function",
+        "z": "0bd8457dda61dcf8",
+        "name": "parseAngleAndPower",
+        "func": "//msg.headers[\"content-range\"]: \"bytes 6040764-6040767/6040768\"\n\nlet buf= msg.payload;\nmsg.payload = {\n    angle: buf.readInt16LE(4),\n    power: buf.readInt16LE(6),\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 80,
+        "wires": [
+            [
+                "9575d78c05f42a20",
+                "c316438fe45722a7"
+            ]
+        ]
+    },
+    {
+        "id": "5aaf8778628f18a5",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Angle",
+        "label": "degrees",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "360",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 930,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "9575d78c05f42a20",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "get angle",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.angle",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 80,
+        "wires": [
+            [
+                "5aaf8778628f18a5"
+            ]
+        ]
+    },
+    {
+        "id": "c316438fe45722a7",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "get power",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.power",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 140,
+        "wires": [
+            [
+                "3481c2cab7ac9cf3"
+            ]
+        ]
+    },
+    {
+        "id": "3481c2cab7ac9cf3",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Power",
+        "label": "degrees",
+        "format": "{{value}}",
+        "min": "-120",
+        "max": "20",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 930,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "7b44546ae9ded30f",
+        "type": "ui_dropdown",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "label": "Antenna",
+        "tooltip": "",
+        "place": "Select antenna",
+        "group": "c0c88598f376b790",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "TX/RX",
+                "value": "TX/RX",
+                "type": "str"
+            },
+            {
+                "label": "RX2",
+                "value": "RX2",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 140,
+        "y": 240,
+        "wires": [
+            [
+                "b34fb23edc1f89ef"
+            ]
+        ]
+    },
+    {
+        "id": "370203c8c647cb41",
+        "type": "http request",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/RPC2",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 650,
+        "y": 240,
+        "wires": [
+            [
+                "da1939a2086e85ad"
+            ]
+        ]
+    },
+    {
+        "id": "b34fb23edc1f89ef",
+        "type": "template",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<methodCall>\n    <methodName>set_antenna_chooser</methodName>\n    <params>\n      <param>\n        <value>\n            <string>{{payload}}</string>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
+        "output": "str",
+        "x": 400,
+        "y": 240,
+        "wires": [
+            [
+                "370203c8c647cb41"
+            ]
+        ]
+    },
+    {
+        "id": "95032fb61edee9c5",
+        "type": "xml",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "property": "payload",
+        "attr": "",
+        "chr": "",
+        "x": 330,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7c31472cbecff71d",
+        "type": "template",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<methodCall>\n    <methodName>set_frequency</methodName>\n    <params>\n      <param>\n        <value>\n            <double>{{payload}}</double>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
+        "output": "str",
+        "x": 500,
+        "y": 340,
+        "wires": [
+            [
+                "370203c8c647cb41",
+                "da1939a2086e85ad"
+            ]
+        ]
+    },
+    {
+        "id": "1a7c50f528940acf",
+        "type": "ui_slider",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "label": "Frequency MHz",
+        "tooltip": "",
+        "group": "c0c88598f376b790",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "70",
+        "max": "6000",
+        "step": "0.1",
+        "className": "",
+        "x": 280,
+        "y": 340,
+        "wires": [
+            [
+                "c429f388c5d6c126"
+            ]
+        ]
+    },
+    {
+        "id": "52162a63ac4f99a9",
+        "type": "ui_text_input",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "label": "Frequency MHz",
+        "tooltip": "",
+        "group": "c0c88598f376b790",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "number",
+        "delay": "1000",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 100,
+        "y": 380,
+        "wires": [
+            [
+                "1a7c50f528940acf"
+            ]
+        ]
+    },
+    {
+        "id": "abb6b0088999c091",
+        "type": "ui_slider",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "label": "Gain",
+        "tooltip": "",
+        "group": "c0c88598f376b790",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "0",
+        "max": "100",
+        "step": "1",
+        "className": "",
+        "x": 190,
+        "y": 460,
+        "wires": [
+            [
+                "20132f0f32498a95"
+            ]
+        ]
+    },
+    {
+        "id": "20132f0f32498a95",
+        "type": "template",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<methodCall>\n    <methodName>set_rx_gain</methodName>\n    <params>\n      <param>\n        <value>\n            <double>{{payload}}</double>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
+        "output": "str",
+        "x": 440,
+        "y": 460,
+        "wires": [
+            [
+                "370203c8c647cb41"
+            ]
+        ]
+    },
+    {
+        "id": "c429f388c5d6c126",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(msg.payload) * 1000000",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 400,
+        "wires": [
+            [
+                "7c31472cbecff71d"
+            ]
+        ]
+    }
+]
