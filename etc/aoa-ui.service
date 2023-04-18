@@ -1,0 +1,22 @@
+[Unit]
+Description=Angle of Arrival web ui
+After=syslog.target network.target
+
+[Service]
+Environment="PATH=/opt/node/bin:/bin:$PATH"
+#Full Path to Node.js
+ExecStart=/opt/node/bin/npm start
+WorkingDirectory=/home/devel/aoa-ui
+User=devel
+Group=devel
+#Nice=10
+SyslogIdentifier=jamcontrols
+StandardOutput=syslog
+StandardError=syslog
+Restart=on-failure
+KillSignal=SIGINT
+#CPUSchedulingPolicy=rr
+#CPUSchedulingPriority=29
+
+[Install]
+WantedBy=multi-user.target
