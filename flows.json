@@ -131,7 +131,7 @@
         "method": "GET",
         "ret": "bin",
         "paytoqs": "ignore",
-        "url": "http://localhost/plastone/angle.bin",
+        "url": "http://localhost/aoa/angle.bin",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -143,11 +143,11 @@
                 "keyType": "other",
                 "keyValue": "Range",
                 "valueType": "other",
-                "valueValue": "bytes=-10"
+                "valueValue": "bytes=-12"
             }
         ],
-        "x": 330,
-        "y": 80,
+        "x": 110,
+        "y": 40,
         "wires": [
             [
                 "65de3f1dbdd4feb4"
@@ -167,8 +167,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
-        "y": 340,
+        "x": 480,
+        "y": 220,
         "wires": []
     },
     {
@@ -185,18 +185,20 @@
                 "vt": "str"
             }
         ],
-        "repeat": "0.2",
+        "repeat": "0.3",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 170,
-        "y": 80,
+        "x": 70,
+        "y": 480,
         "wires": [
             [
-                "39a5dd8d0dadac75"
+                "39a5dd8d0dadac75",
+                "089e2122efd83298",
+                "fbb4f53345438944"
             ]
         ]
     },
@@ -205,18 +207,21 @@
         "type": "function",
         "z": "0bd8457dda61dcf8",
         "name": "parseAngleAndPower",
-        "func": "//msg.headers[\"content-range\"]: \"bytes 6040764-6040767/6040768\"\n\nlet buf= msg.payload;\nmsg.payload = {\n    angle: buf.readInt16LE(4),\n    power: buf.readInt16LE(6),\n}\nreturn msg;",
+        "func": "//msg.headers[\"content-range\"]: \"bytes 6040764-6040767/6040768\"\n\nlet buf= msg.payload;\nmsg.payload = {\n    angle: buf.readInt16LE(4),\n    power: buf.readInt16LE(6),\n    offset: buf.readInt16LE(8),\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
-        "y": 80,
+        "x": 320,
+        "y": 40,
         "wires": [
             [
                 "9575d78c05f42a20",
-                "c316438fe45722a7"
+                "c316438fe45722a7",
+                "87793d31dd3dbbc0",
+                "7e4795f7a5cdb8aa",
+                "36058c269e72f2aa"
             ]
         ]
     },
@@ -224,28 +229,29 @@
         "id": "5aaf8778628f18a5",
         "type": "ui_gauge",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "",
         "group": "c0c88598f376b790",
         "order": 5,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Angle",
+        "width": "2",
+        "height": "2",
+        "gtype": "compass",
+        "title": "Angle 1",
         "label": "degrees",
         "format": "{{value}}",
         "min": 0,
         "max": "360",
         "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
+            "#f66151",
+            "#2ec27e",
+            "#f66151"
         ],
-        "seg1": "",
-        "seg2": "",
+        "seg1": "30",
+        "seg2": "150",
         "diff": false,
         "className": "",
-        "x": 930,
-        "y": 80,
+        "x": 920,
+        "y": 40,
         "wires": []
     },
     {
@@ -267,11 +273,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
-        "y": 80,
+        "x": 500,
+        "y": 160,
         "wires": [
             [
-                "5aaf8778628f18a5"
+                "fd0ed138370ba430"
             ]
         ]
     },
@@ -294,8 +300,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 780,
-        "y": 140,
+        "x": 500,
+        "y": 80,
         "wires": [
             [
                 "3481c2cab7ac9cf3"
@@ -308,65 +314,27 @@
         "z": "0bd8457dda61dcf8",
         "name": "",
         "group": "c0c88598f376b790",
-        "order": 6,
-        "width": 0,
-        "height": 0,
+        "order": 14,
+        "width": "2",
+        "height": "2",
         "gtype": "gage",
-        "title": "Power",
-        "label": "degrees",
+        "title": "Power 1",
+        "label": "dB",
         "format": "{{value}}",
         "min": "-120",
         "max": "20",
         "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
+            "#1c71d8",
+            "#2ec27e",
+            "#ed333b"
         ],
-        "seg1": "",
-        "seg2": "",
+        "seg1": "-35",
+        "seg2": "0",
         "diff": false,
         "className": "",
-        "x": 930,
-        "y": 140,
+        "x": 920,
+        "y": 80,
         "wires": []
-    },
-    {
-        "id": "7b44546ae9ded30f",
-        "type": "ui_dropdown",
-        "z": "0bd8457dda61dcf8",
-        "name": "",
-        "label": "Antenna",
-        "tooltip": "",
-        "place": "Select antenna",
-        "group": "c0c88598f376b790",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "multiple": false,
-        "options": [
-            {
-                "label": "TX/RX",
-                "value": "TX/RX",
-                "type": "str"
-            },
-            {
-                "label": "RX2",
-                "value": "RX2",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 140,
-        "y": 240,
-        "wires": [
-            [
-                "b34fb23edc1f89ef"
-            ]
-        ]
     },
     {
         "id": "370203c8c647cb41",
@@ -384,45 +352,12 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 650,
-        "y": 240,
+        "x": 450,
+        "y": 280,
         "wires": [
             [
                 "da1939a2086e85ad"
             ]
-        ]
-    },
-    {
-        "id": "b34fb23edc1f89ef",
-        "type": "template",
-        "z": "0bd8457dda61dcf8",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "<methodCall>\n    <methodName>set_antenna_chooser</methodName>\n    <params>\n      <param>\n        <value>\n            <string>{{payload}}</string>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
-        "output": "str",
-        "x": 400,
-        "y": 240,
-        "wires": [
-            [
-                "370203c8c647cb41"
-            ]
-        ]
-    },
-    {
-        "id": "95032fb61edee9c5",
-        "type": "xml",
-        "z": "0bd8457dda61dcf8",
-        "name": "",
-        "property": "payload",
-        "attr": "",
-        "chr": "",
-        "x": 330,
-        "y": 560,
-        "wires": [
-            []
         ]
     },
     {
@@ -436,8 +371,8 @@
         "syntax": "mustache",
         "template": "<methodCall>\n    <methodName>set_frequency</methodName>\n    <params>\n      <param>\n        <value>\n            <double>{{payload}}</double>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
         "output": "str",
-        "x": 500,
-        "y": 340,
+        "x": 280,
+        "y": 220,
         "wires": [
             [
                 "370203c8c647cb41",
@@ -453,7 +388,7 @@
         "label": "Frequency MHz",
         "tooltip": "",
         "group": "c0c88598f376b790",
-        "order": 2,
+        "order": 1,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -462,10 +397,10 @@
         "topicType": "msg",
         "min": "70",
         "max": "6000",
-        "step": "0.1",
+        "step": "0.001",
         "className": "",
-        "x": 280,
-        "y": 340,
+        "x": 300,
+        "y": 160,
         "wires": [
             [
                 "c429f388c5d6c126"
@@ -480,7 +415,7 @@
         "label": "Frequency MHz",
         "tooltip": "",
         "group": "c0c88598f376b790",
-        "order": 3,
+        "order": 2,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -490,8 +425,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 100,
-        "y": 380,
+        "x": 120,
+        "y": 160,
         "wires": [
             [
                 "1a7c50f528940acf"
@@ -506,7 +441,7 @@
         "label": "Gain",
         "tooltip": "",
         "group": "c0c88598f376b790",
-        "order": 4,
+        "order": 3,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -514,11 +449,11 @@
         "topic": "topic",
         "topicType": "msg",
         "min": "0",
-        "max": "100",
+        "max": "70",
         "step": "1",
         "className": "",
-        "x": 190,
-        "y": 460,
+        "x": 90,
+        "y": 280,
         "wires": [
             [
                 "20132f0f32498a95"
@@ -536,8 +471,8 @@
         "syntax": "mustache",
         "template": "<methodCall>\n    <methodName>set_rx_gain</methodName>\n    <params>\n      <param>\n        <value>\n            <double>{{payload}}</double>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
         "output": "str",
-        "x": 440,
-        "y": 460,
+        "x": 280,
+        "y": 280,
         "wires": [
             [
                 "370203c8c647cb41"
@@ -563,12 +498,803 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 380,
-        "y": 400,
+        "x": 120,
+        "y": 220,
         "wires": [
             [
                 "7c31472cbecff71d"
             ]
         ]
+    },
+    {
+        "id": "089e2122efd83298",
+        "type": "http request",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "method": "GET",
+        "ret": "bin",
+        "paytoqs": "ignore",
+        "url": "http://localhost/aoa/angle-2.bin",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Range",
+                "valueType": "other",
+                "valueValue": "bytes=-12"
+            }
+        ],
+        "x": 110,
+        "y": 340,
+        "wires": [
+            [
+                "cbb4d484143c5c5e"
+            ]
+        ]
+    },
+    {
+        "id": "cbb4d484143c5c5e",
+        "type": "function",
+        "z": "0bd8457dda61dcf8",
+        "name": "parseAngleAndPower",
+        "func": "//msg.headers[\"content-range\"]: \"bytes 6040764-6040767/6040768\"\n\nlet buf= msg.payload;\nmsg.payload = {\n    angle: buf.readInt16LE(4),\n    power: buf.readInt16LE(6),\n    offset: buf.readInt16LE(8),\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 340,
+        "wires": [
+            [
+                "e6751cdfc504d1d7",
+                "0361dcf499d17d68",
+                "afc3ffe4e8c061e6",
+                "df83bd88313db454",
+                "46129cdf9b15f9ee"
+            ]
+        ]
+    },
+    {
+        "id": "0ef9f25c10586dfe",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 6,
+        "width": "2",
+        "height": "2",
+        "gtype": "compass",
+        "title": "Angle 2",
+        "label": "degrees",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "360",
+        "colors": [
+            "#f66151",
+            "#2ec27e",
+            "#f66151"
+        ],
+        "seg1": "30",
+        "seg2": "150",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e6751cdfc504d1d7",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "get angle",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.angle",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 460,
+        "wires": [
+            [
+                "2953e86677649a5e"
+            ]
+        ]
+    },
+    {
+        "id": "0361dcf499d17d68",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "get power",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.power",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 380,
+        "wires": [
+            [
+                "edd3965bcaea9da5"
+            ]
+        ]
+    },
+    {
+        "id": "edd3965bcaea9da5",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 15,
+        "width": "2",
+        "height": "2",
+        "gtype": "gage",
+        "title": "Power 2",
+        "label": "dB",
+        "format": "{{value}}",
+        "min": "-120",
+        "max": "20",
+        "colors": [
+            "#1c71d8",
+            "#2ec27e",
+            "#ed333b"
+        ],
+        "seg1": "-35",
+        "seg2": "0",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "fbb4f53345438944",
+        "type": "http request",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "method": "GET",
+        "ret": "bin",
+        "paytoqs": "ignore",
+        "url": "http://localhost/aoa/angle-3.bin",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Range",
+                "valueType": "other",
+                "valueValue": "bytes=-12"
+            }
+        ],
+        "x": 110,
+        "y": 540,
+        "wires": [
+            [
+                "ee72433db60a1913"
+            ]
+        ]
+    },
+    {
+        "id": "ee72433db60a1913",
+        "type": "function",
+        "z": "0bd8457dda61dcf8",
+        "name": "parseAngleAndPower",
+        "func": "//msg.headers[\"content-range\"]: \"bytes 6040764-6040767/6040768\"\n\nlet buf= msg.payload;\nmsg.payload = {\n    angle: buf.readInt16LE(4),\n    power: buf.readInt16LE(6),\n    offset: buf.readInt16LE(8),\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 540,
+        "wires": [
+            [
+                "dcd54d108621c415",
+                "6b90a5cd9d28d9fd",
+                "85aef0d9cd6cb273",
+                "8b925d027d23df0e",
+                "f60734b03104e917"
+            ]
+        ]
+    },
+    {
+        "id": "f26d5b54a775fd29",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 7,
+        "width": "2",
+        "height": "2",
+        "gtype": "compass",
+        "title": "Angle 3",
+        "label": "degrees",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "360",
+        "colors": [
+            "#f66151",
+            "#2ec27e",
+            "#f66151"
+        ],
+        "seg1": "30",
+        "seg2": "150",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "dcd54d108621c415",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "get angle",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.angle",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 660,
+        "wires": [
+            [
+                "0116dfa02f235232"
+            ]
+        ]
+    },
+    {
+        "id": "6b90a5cd9d28d9fd",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "get power",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.power",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 580,
+        "wires": [
+            [
+                "6a32a8a01c45eb60"
+            ]
+        ]
+    },
+    {
+        "id": "6a32a8a01c45eb60",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 16,
+        "width": "2",
+        "height": "2",
+        "gtype": "gage",
+        "title": "Power 3",
+        "label": "dB",
+        "format": "{{value}}",
+        "min": "-120",
+        "max": "20",
+        "colors": [
+            "#1c71d8",
+            "#2ec27e",
+            "#ed333b"
+        ],
+        "seg1": "-35",
+        "seg2": "0",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "c4f41648d1bfc1a2",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 8,
+        "width": "2",
+        "height": "2",
+        "gtype": "compass",
+        "title": "Angle 1",
+        "label": "degrees",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "360",
+        "colors": [
+            "#f66151",
+            "#2ec27e",
+            "#f66151"
+        ],
+        "seg1": "30",
+        "seg2": "150",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "afc3ffe4e8c061e6",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "((msg.payload.angle + 360)%360 + msg.payload.offset)%360",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 340,
+        "wires": [
+            [
+                "0ef9f25c10586dfe"
+            ]
+        ]
+    },
+    {
+        "id": "36058c269e72f2aa",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "((-msg.payload.angle + 360)%360 + msg.payload.offset)%360",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 120,
+        "wires": [
+            [
+                "c4f41648d1bfc1a2"
+            ]
+        ]
+    },
+    {
+        "id": "df83bd88313db454",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "((-msg.payload.angle + 360)%360 + msg.payload.offset)%360",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 420,
+        "wires": [
+            [
+                "71454944ea70138e"
+            ]
+        ]
+    },
+    {
+        "id": "71454944ea70138e",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 9,
+        "width": "2",
+        "height": "2",
+        "gtype": "compass",
+        "title": "Angle 2",
+        "label": "degrees",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "360",
+        "colors": [
+            "#f66151",
+            "#2ec27e",
+            "#f66151"
+        ],
+        "seg1": "30",
+        "seg2": "150",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "7e4795f7a5cdb8aa",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "(360+msg.payload.angle+msg.payload.offset)%360",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 40,
+        "wires": [
+            [
+                "5aaf8778628f18a5"
+            ]
+        ]
+    },
+    {
+        "id": "85aef0d9cd6cb273",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "(360+msg.payload.angle+msg.payload.offset)%360",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 540,
+        "wires": [
+            [
+                "f26d5b54a775fd29"
+            ]
+        ]
+    },
+    {
+        "id": "8b925d027d23df0e",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "((-msg.payload.angle + 360)%360 + msg.payload.offset)%360",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 620,
+        "wires": [
+            [
+                "35abe632be2892ad"
+            ]
+        ]
+    },
+    {
+        "id": "35abe632be2892ad",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 10,
+        "width": "2",
+        "height": "2",
+        "gtype": "compass",
+        "title": "Angle 3",
+        "label": "degrees",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "360",
+        "colors": [
+            "#f66151",
+            "#2ec27e",
+            "#f66151"
+        ],
+        "seg1": "30",
+        "seg2": "150",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "fd0ed138370ba430",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 11,
+        "width": "2",
+        "height": "2",
+        "gtype": "gage",
+        "title": "Angle 1",
+        "label": "degrees",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "180",
+        "colors": [
+            "#f66151",
+            "#2ec27e",
+            "#f66151"
+        ],
+        "seg1": "25",
+        "seg2": "155",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "2953e86677649a5e",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 12,
+        "width": "2",
+        "height": "2",
+        "gtype": "gage",
+        "title": "Angle 2",
+        "label": "degrees",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "180",
+        "colors": [
+            "#f66151",
+            "#2ec27e",
+            "#f66151"
+        ],
+        "seg1": "25",
+        "seg2": "155",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "0116dfa02f235232",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 13,
+        "width": "2",
+        "height": "2",
+        "gtype": "gage",
+        "title": "Angle 3",
+        "label": "degrees",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "180",
+        "colors": [
+            "#f66151",
+            "#2ec27e",
+            "#f66151"
+        ],
+        "seg1": "25",
+        "seg2": "155",
+        "diff": false,
+        "className": "",
+        "x": 920,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "87793d31dd3dbbc0",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "Mem Angle0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "angle0",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 120,
+        "wires": [
+            [
+                "4ffb2f19d70e55db"
+            ]
+        ]
+    },
+    {
+        "id": "4ffb2f19d70e55db",
+        "type": "function",
+        "z": "0bd8457dda61dcf8",
+        "name": "function 1",
+        "func": "function calcAngle(anglesWithOffsets) {\n    const toRealAngle = (offset, x) => (((x + 360) % 360) + offset) % 360;\n    const deltaAngle = (x, y) => 180 - Math.abs(Math.abs(x - y) - 180);\n    let sorted = anglesWithOffsets.sort(\n        (x, y) => deltaAngle(x.angle, 90) - deltaAngle(y.angle, 90)\n    );\n    let real = sorted.map((x) => [\n        { offset: x.offset, angle: x.angle, real: toRealAngle(x.offset, x.angle) },\n        {\n            offset: x.offset,\n            angle: -x.angle,\n            real: toRealAngle(x.offset, -x.angle),\n        },\n    ]);\n    let [best, second] = real;\n    let deltas = best.map((x) =>\n        Math.min(\n            deltaAngle(x.real, second[0].real),\n            deltaAngle(x.real, second[1].real)\n        )\n    );\n    let result = deltas[0] < deltas[1] ? best[0].real : best[1].real;\n    return result;\n}\nmsg.payload = calcAngle([global.get('angle0'), global.get('angle1'), global.get('angle2')])\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 240,
+        "wires": [
+            [
+                "76934f042d069033"
+            ]
+        ]
+    },
+    {
+        "id": "46129cdf9b15f9ee",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "Mem Angle1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "angle1",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 420,
+        "wires": [
+            [
+                "4ffb2f19d70e55db"
+            ]
+        ]
+    },
+    {
+        "id": "f60734b03104e917",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "Mem Angle2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "angle2",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 620,
+        "wires": [
+            [
+                "4ffb2f19d70e55db"
+            ]
+        ]
+    },
+    {
+        "id": "76934f042d069033",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "compass",
+        "title": "Signal Direction",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "359",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 940,
+        "y": 240,
+        "wires": []
     }
 ]
