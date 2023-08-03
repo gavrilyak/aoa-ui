@@ -2,7 +2,7 @@
     {
         "id": "0bd8457dda61dcf8",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Compas",
         "disabled": false,
         "info": "",
         "env": []
@@ -10,8 +10,9 @@
     {
         "id": "cbcb4239ed62258f",
         "type": "ui_tab",
-        "name": "Home",
+        "name": "Home   DF-210 Cell Antenna",
         "icon": "dashboard",
+        "order": 1,
         "disabled": false,
         "hidden": false
     },
@@ -94,11 +95,11 @@
             }
         },
         "site": {
-            "name": "Node-RED Dashboard",
+            "name": "CA DF-210",
             "hideToolbar": "false",
             "allowSwipe": "false",
             "lockMenu": "false",
-            "allowTempTheme": "true",
+            "allowTempTheme": "none",
             "dateFormat": "DD/MM/YYYY",
             "sizes": {
                 "sx": 48,
@@ -115,13 +116,83 @@
     {
         "id": "c0c88598f376b790",
         "type": "ui_group",
-        "name": "Default",
+        "name": "Compas 4 times per sec",
         "tab": "cbcb4239ed62258f",
         "order": 1,
         "disp": true,
         "width": "6",
         "collapse": false,
         "className": ""
+    },
+    {
+        "id": "cf3108690ea4a357",
+        "type": "ui_tab",
+        "name": "Charts",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "fef26fd1ecac0a7a",
+        "type": "ui_group",
+        "name": "Time",
+        "tab": "cf3108690ea4a357",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7155333b10f9baed",
+        "type": "ui_tab",
+        "name": "Calibration",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "52a3b3d856fb2081",
+        "type": "ui_group",
+        "name": "Angle",
+        "tab": "7155333b10f9baed",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "efc6b7eeb943190c",
+        "type": "ui_group",
+        "name": "Map",
+        "tab": "a6fb18cb9431cb48",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a6fb18cb9431cb48",
+        "type": "ui_tab",
+        "name": "Map",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "09cf74afd8028524",
+        "type": "ui_spacer",
+        "z": "0bd8457dda61dcf8",
+        "name": "spacer",
+        "group": "32043392f63c4d23",
+        "order": 2,
+        "width": 1,
+        "height": 1
     },
     {
         "id": "39a5dd8d0dadac75",
@@ -147,7 +218,7 @@
             }
         ],
         "x": 110,
-        "y": 40,
+        "y": 240,
         "wires": [
             [
                 "65de3f1dbdd4feb4"
@@ -158,8 +229,9 @@
         "id": "da1939a2086e85ad",
         "type": "debug",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "debug 1",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -167,8 +239,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 480,
-        "y": 220,
+        "x": 840,
+        "y": 100,
         "wires": []
     },
     {
@@ -185,20 +257,21 @@
                 "vt": "str"
             }
         ],
-        "repeat": "0.3",
+        "repeat": "0.25",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 70,
-        "y": 480,
+        "x": 110,
+        "y": 460,
         "wires": [
             [
                 "39a5dd8d0dadac75",
                 "089e2122efd83298",
-                "fbb4f53345438944"
+                "fbb4f53345438944",
+                "732fe241ecde2003"
             ]
         ]
     },
@@ -213,46 +286,15 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 40,
+        "x": 300,
+        "y": 240,
         "wires": [
             [
                 "9575d78c05f42a20",
                 "c316438fe45722a7",
-                "87793d31dd3dbbc0",
-                "7e4795f7a5cdb8aa",
-                "36058c269e72f2aa"
+                "87793d31dd3dbbc0"
             ]
         ]
-    },
-    {
-        "id": "5aaf8778628f18a5",
-        "type": "ui_gauge",
-        "z": "0bd8457dda61dcf8",
-        "d": true,
-        "name": "",
-        "group": "c0c88598f376b790",
-        "order": 5,
-        "width": "2",
-        "height": "2",
-        "gtype": "compass",
-        "title": "Angle 1",
-        "label": "degrees",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "360",
-        "colors": [
-            "#f66151",
-            "#2ec27e",
-            "#f66151"
-        ],
-        "seg1": "30",
-        "seg2": "150",
-        "diff": false,
-        "className": "",
-        "x": 920,
-        "y": 40,
-        "wires": []
     },
     {
         "id": "9575d78c05f42a20",
@@ -274,7 +316,7 @@
         "to": "",
         "reg": false,
         "x": 500,
-        "y": 160,
+        "y": 280,
         "wires": [
             [
                 "fd0ed138370ba430"
@@ -301,7 +343,7 @@
         "to": "",
         "reg": false,
         "x": 500,
-        "y": 80,
+        "y": 200,
         "wires": [
             [
                 "3481c2cab7ac9cf3"
@@ -313,10 +355,10 @@
         "type": "ui_gauge",
         "z": "0bd8457dda61dcf8",
         "name": "",
-        "group": "c0c88598f376b790",
-        "order": 14,
-        "width": "2",
-        "height": "2",
+        "group": "52a3b3d856fb2081",
+        "order": 4,
+        "width": 2,
+        "height": 2,
         "gtype": "gage",
         "title": "Power 1",
         "label": "dB",
@@ -332,8 +374,8 @@
         "seg2": "0",
         "diff": false,
         "className": "",
-        "x": 920,
-        "y": 80,
+        "x": 840,
+        "y": 200,
         "wires": []
     },
     {
@@ -352,8 +394,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 450,
-        "y": 280,
+        "x": 670,
+        "y": 100,
         "wires": [
             [
                 "da1939a2086e85ad"
@@ -371,8 +413,8 @@
         "syntax": "mustache",
         "template": "<methodCall>\n    <methodName>set_frequency</methodName>\n    <params>\n      <param>\n        <value>\n            <double>{{payload}}</double>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
         "output": "str",
-        "x": 280,
-        "y": 220,
+        "x": 700,
+        "y": 20,
         "wires": [
             [
                 "370203c8c647cb41",
@@ -385,12 +427,12 @@
         "type": "ui_slider",
         "z": "0bd8457dda61dcf8",
         "name": "",
-        "label": "Frequency MHz",
+        "label": "F",
         "tooltip": "",
         "group": "c0c88598f376b790",
-        "order": 1,
-        "width": 0,
-        "height": 0,
+        "order": 2,
+        "width": "3",
+        "height": 1,
         "passthru": true,
         "outs": "end",
         "topic": "topic",
@@ -399,8 +441,8 @@
         "max": "6000",
         "step": "0.001",
         "className": "",
-        "x": 300,
-        "y": 160,
+        "x": 310,
+        "y": 20,
         "wires": [
             [
                 "c429f388c5d6c126"
@@ -412,12 +454,12 @@
         "type": "ui_text_input",
         "z": "0bd8457dda61dcf8",
         "name": "",
-        "label": "Frequency MHz",
+        "label": "F,MHz",
         "tooltip": "",
         "group": "c0c88598f376b790",
-        "order": 2,
-        "width": 0,
-        "height": 0,
+        "order": 1,
+        "width": "3",
+        "height": 1,
         "passthru": false,
         "mode": "number",
         "delay": "1000",
@@ -425,8 +467,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 120,
-        "y": 160,
+        "x": 90,
+        "y": 20,
         "wires": [
             [
                 "1a7c50f528940acf"
@@ -438,12 +480,12 @@
         "type": "ui_slider",
         "z": "0bd8457dda61dcf8",
         "name": "",
-        "label": "Gain",
+        "label": "G",
         "tooltip": "",
         "group": "c0c88598f376b790",
-        "order": 3,
-        "width": 0,
-        "height": 0,
+        "order": 4,
+        "width": "3",
+        "height": 1,
         "passthru": false,
         "outs": "end",
         "topic": "topic",
@@ -452,8 +494,8 @@
         "max": "70",
         "step": "1",
         "className": "",
-        "x": 90,
-        "y": 280,
+        "x": 310,
+        "y": 140,
         "wires": [
             [
                 "20132f0f32498a95"
@@ -471,8 +513,8 @@
         "syntax": "mustache",
         "template": "<methodCall>\n    <methodName>set_rx_gain</methodName>\n    <params>\n      <param>\n        <value>\n            <double>{{payload}}</double>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
         "output": "str",
-        "x": 280,
-        "y": 280,
+        "x": 500,
+        "y": 140,
         "wires": [
             [
                 "370203c8c647cb41"
@@ -498,8 +540,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 120,
-        "y": 220,
+        "x": 520,
+        "y": 20,
         "wires": [
             [
                 "7c31472cbecff71d"
@@ -530,7 +572,7 @@
             }
         ],
         "x": 110,
-        "y": 340,
+        "y": 380,
         "wires": [
             [
                 "cbb4d484143c5c5e"
@@ -549,45 +591,14 @@
         "finalize": "",
         "libs": [],
         "x": 300,
-        "y": 340,
+        "y": 380,
         "wires": [
             [
                 "e6751cdfc504d1d7",
                 "0361dcf499d17d68",
-                "afc3ffe4e8c061e6",
-                "df83bd88313db454",
                 "46129cdf9b15f9ee"
             ]
         ]
-    },
-    {
-        "id": "0ef9f25c10586dfe",
-        "type": "ui_gauge",
-        "z": "0bd8457dda61dcf8",
-        "d": true,
-        "name": "",
-        "group": "c0c88598f376b790",
-        "order": 6,
-        "width": "2",
-        "height": "2",
-        "gtype": "compass",
-        "title": "Angle 2",
-        "label": "degrees",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "360",
-        "colors": [
-            "#f66151",
-            "#2ec27e",
-            "#f66151"
-        ],
-        "seg1": "30",
-        "seg2": "150",
-        "diff": false,
-        "className": "",
-        "x": 920,
-        "y": 340,
-        "wires": []
     },
     {
         "id": "e6751cdfc504d1d7",
@@ -609,7 +620,7 @@
         "to": "",
         "reg": false,
         "x": 500,
-        "y": 460,
+        "y": 420,
         "wires": [
             [
                 "2953e86677649a5e"
@@ -636,7 +647,7 @@
         "to": "",
         "reg": false,
         "x": 500,
-        "y": 380,
+        "y": 340,
         "wires": [
             [
                 "edd3965bcaea9da5"
@@ -648,10 +659,10 @@
         "type": "ui_gauge",
         "z": "0bd8457dda61dcf8",
         "name": "",
-        "group": "c0c88598f376b790",
-        "order": 15,
-        "width": "2",
-        "height": "2",
+        "group": "52a3b3d856fb2081",
+        "order": 5,
+        "width": 2,
+        "height": 2,
         "gtype": "gage",
         "title": "Power 2",
         "label": "dB",
@@ -667,8 +678,8 @@
         "seg2": "0",
         "diff": false,
         "className": "",
-        "x": 920,
-        "y": 380,
+        "x": 840,
+        "y": 340,
         "wires": []
     },
     {
@@ -695,7 +706,7 @@
             }
         ],
         "x": 110,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "ee72433db60a1913"
@@ -714,45 +725,14 @@
         "finalize": "",
         "libs": [],
         "x": 300,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "dcd54d108621c415",
                 "6b90a5cd9d28d9fd",
-                "85aef0d9cd6cb273",
-                "8b925d027d23df0e",
                 "f60734b03104e917"
             ]
         ]
-    },
-    {
-        "id": "f26d5b54a775fd29",
-        "type": "ui_gauge",
-        "z": "0bd8457dda61dcf8",
-        "d": true,
-        "name": "",
-        "group": "c0c88598f376b790",
-        "order": 7,
-        "width": "2",
-        "height": "2",
-        "gtype": "compass",
-        "title": "Angle 3",
-        "label": "degrees",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "360",
-        "colors": [
-            "#f66151",
-            "#2ec27e",
-            "#f66151"
-        ],
-        "seg1": "30",
-        "seg2": "150",
-        "diff": false,
-        "className": "",
-        "x": 920,
-        "y": 540,
-        "wires": []
     },
     {
         "id": "dcd54d108621c415",
@@ -774,7 +754,7 @@
         "to": "",
         "reg": false,
         "x": 500,
-        "y": 660,
+        "y": 560,
         "wires": [
             [
                 "0116dfa02f235232"
@@ -801,7 +781,7 @@
         "to": "",
         "reg": false,
         "x": 500,
-        "y": 580,
+        "y": 480,
         "wires": [
             [
                 "6a32a8a01c45eb60"
@@ -813,10 +793,10 @@
         "type": "ui_gauge",
         "z": "0bd8457dda61dcf8",
         "name": "",
-        "group": "c0c88598f376b790",
-        "order": 16,
-        "width": "2",
-        "height": "2",
+        "group": "52a3b3d856fb2081",
+        "order": 6,
+        "width": 2,
+        "height": 2,
         "gtype": "gage",
         "title": "Power 3",
         "label": "dB",
@@ -832,257 +812,8 @@
         "seg2": "0",
         "diff": false,
         "className": "",
-        "x": 920,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "c4f41648d1bfc1a2",
-        "type": "ui_gauge",
-        "z": "0bd8457dda61dcf8",
-        "d": true,
-        "name": "",
-        "group": "c0c88598f376b790",
-        "order": 8,
-        "width": "2",
-        "height": "2",
-        "gtype": "compass",
-        "title": "Angle 1",
-        "label": "degrees",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "360",
-        "colors": [
-            "#f66151",
-            "#2ec27e",
-            "#f66151"
-        ],
-        "seg1": "30",
-        "seg2": "150",
-        "diff": false,
-        "className": "",
-        "x": 920,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "afc3ffe4e8c061e6",
-        "type": "change",
-        "z": "0bd8457dda61dcf8",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((msg.payload.angle + 360)%360 + msg.payload.offset)%360",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 760,
-        "y": 340,
-        "wires": [
-            [
-                "0ef9f25c10586dfe"
-            ]
-        ]
-    },
-    {
-        "id": "36058c269e72f2aa",
-        "type": "change",
-        "z": "0bd8457dda61dcf8",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((-msg.payload.angle + 360)%360 + msg.payload.offset)%360",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 760,
-        "y": 120,
-        "wires": [
-            [
-                "c4f41648d1bfc1a2"
-            ]
-        ]
-    },
-    {
-        "id": "df83bd88313db454",
-        "type": "change",
-        "z": "0bd8457dda61dcf8",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((-msg.payload.angle + 360)%360 + msg.payload.offset)%360",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 760,
-        "y": 420,
-        "wires": [
-            [
-                "71454944ea70138e"
-            ]
-        ]
-    },
-    {
-        "id": "71454944ea70138e",
-        "type": "ui_gauge",
-        "z": "0bd8457dda61dcf8",
-        "d": true,
-        "name": "",
-        "group": "c0c88598f376b790",
-        "order": 9,
-        "width": "2",
-        "height": "2",
-        "gtype": "compass",
-        "title": "Angle 2",
-        "label": "degrees",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "360",
-        "colors": [
-            "#f66151",
-            "#2ec27e",
-            "#f66151"
-        ],
-        "seg1": "30",
-        "seg2": "150",
-        "diff": false,
-        "className": "",
-        "x": 920,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "7e4795f7a5cdb8aa",
-        "type": "change",
-        "z": "0bd8457dda61dcf8",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "(360+msg.payload.angle+msg.payload.offset)%360",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 760,
-        "y": 40,
-        "wires": [
-            [
-                "5aaf8778628f18a5"
-            ]
-        ]
-    },
-    {
-        "id": "85aef0d9cd6cb273",
-        "type": "change",
-        "z": "0bd8457dda61dcf8",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "(360+msg.payload.angle+msg.payload.offset)%360",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 760,
-        "y": 540,
-        "wires": [
-            [
-                "f26d5b54a775fd29"
-            ]
-        ]
-    },
-    {
-        "id": "8b925d027d23df0e",
-        "type": "change",
-        "z": "0bd8457dda61dcf8",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((-msg.payload.angle + 360)%360 + msg.payload.offset)%360",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 760,
-        "y": 620,
-        "wires": [
-            [
-                "35abe632be2892ad"
-            ]
-        ]
-    },
-    {
-        "id": "35abe632be2892ad",
-        "type": "ui_gauge",
-        "z": "0bd8457dda61dcf8",
-        "d": true,
-        "name": "",
-        "group": "c0c88598f376b790",
-        "order": 10,
-        "width": "2",
-        "height": "2",
-        "gtype": "compass",
-        "title": "Angle 3",
-        "label": "degrees",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "360",
-        "colors": [
-            "#f66151",
-            "#2ec27e",
-            "#f66151"
-        ],
-        "seg1": "30",
-        "seg2": "150",
-        "diff": false,
-        "className": "",
-        "x": 920,
-        "y": 620,
+        "x": 840,
+        "y": 480,
         "wires": []
     },
     {
@@ -1090,10 +821,10 @@
         "type": "ui_gauge",
         "z": "0bd8457dda61dcf8",
         "name": "",
-        "group": "c0c88598f376b790",
-        "order": 11,
-        "width": "2",
-        "height": "2",
+        "group": "52a3b3d856fb2081",
+        "order": 1,
+        "width": 2,
+        "height": 2,
         "gtype": "gage",
         "title": "Angle 1",
         "label": "degrees",
@@ -1109,8 +840,8 @@
         "seg2": "155",
         "diff": false,
         "className": "",
-        "x": 920,
-        "y": 160,
+        "x": 840,
+        "y": 280,
         "wires": []
     },
     {
@@ -1118,10 +849,10 @@
         "type": "ui_gauge",
         "z": "0bd8457dda61dcf8",
         "name": "",
-        "group": "c0c88598f376b790",
-        "order": 12,
-        "width": "2",
-        "height": "2",
+        "group": "52a3b3d856fb2081",
+        "order": 2,
+        "width": 2,
+        "height": 2,
         "gtype": "gage",
         "title": "Angle 2",
         "label": "degrees",
@@ -1137,8 +868,8 @@
         "seg2": "155",
         "diff": false,
         "className": "",
-        "x": 920,
-        "y": 460,
+        "x": 840,
+        "y": 420,
         "wires": []
     },
     {
@@ -1146,10 +877,10 @@
         "type": "ui_gauge",
         "z": "0bd8457dda61dcf8",
         "name": "",
-        "group": "c0c88598f376b790",
-        "order": 13,
-        "width": "2",
-        "height": "2",
+        "group": "52a3b3d856fb2081",
+        "order": 3,
+        "width": 2,
+        "height": 2,
         "gtype": "gage",
         "title": "Angle 3",
         "label": "degrees",
@@ -1165,8 +896,8 @@
         "seg2": "155",
         "diff": false,
         "className": "",
-        "x": 920,
-        "y": 660,
+        "x": 840,
+        "y": 560,
         "wires": []
     },
     {
@@ -1189,10 +920,11 @@
         "to": "",
         "reg": false,
         "x": 510,
-        "y": 120,
+        "y": 240,
         "wires": [
             [
-                "4ffb2f19d70e55db"
+                "4ffb2f19d70e55db",
+                "4286dcb382b05067"
             ]
         ]
     },
@@ -1200,18 +932,21 @@
         "id": "4ffb2f19d70e55db",
         "type": "function",
         "z": "0bd8457dda61dcf8",
-        "name": "function 1",
-        "func": "function calcAngle(anglesWithOffsets) {\n    const toRealAngle = (offset, x) => (((x + 360) % 360) + offset) % 360;\n    const deltaAngle = (x, y) => 180 - Math.abs(Math.abs(x - y) - 180);\n    let sorted = anglesWithOffsets.sort(\n        (x, y) => deltaAngle(x.angle, 90) - deltaAngle(y.angle, 90)\n    );\n    let real = sorted.map((x) => [\n        { offset: x.offset, angle: x.angle, real: toRealAngle(x.offset, x.angle) },\n        {\n            offset: x.offset,\n            angle: -x.angle,\n            real: toRealAngle(x.offset, -x.angle),\n        },\n    ]);\n    let [best, second] = real;\n    let deltas = best.map((x) =>\n        Math.min(\n            deltaAngle(x.real, second[0].real),\n            deltaAngle(x.real, second[1].real)\n        )\n    );\n    let result = deltas[0] < deltas[1] ? best[0].real : best[1].real;\n    return result;\n}\nmsg.payload = calcAngle([global.get('angle0'), global.get('angle1'), global.get('angle2')])\nreturn msg;",
+        "name": "calcAngle",
+        "func": "function calcAngle(anglesWithOffsets) {\n    function toRealAngle(offset, x) {\n        return (((x + 360) % 360) + offset) % 360;\n    }\n\n    function deltaAngle(x, y) {\n        return 180 - Math.abs(Math.abs(x - y) - 180);\n    }\n\n    let sorted = anglesWithOffsets\n        .sort((x, y) => deltaAngle(x.angle, 90) - deltaAngle(y.angle, 90))\n        .slice(0, -1);\n    let real = sorted.map((x) => [\n        { offset: x.offset, angle: x.angle, real: toRealAngle(x.offset, x.angle) },\n        {\n            offset: x.offset,\n            angle: -x.angle,\n            real: toRealAngle(x.offset, -x.angle),\n        },\n    ]);\n    let [best, second] = real;\n    let deltas = best.map((x) =>\n        Math.min(\n            deltaAngle(x.real, second[0].real),\n            deltaAngle(x.real, second[1].real)\n        )\n    );\n    let result = deltas[0] < deltas[1] ? best[0].real : best[1].real;\n    //console.log(\"CA:\", [sorted[0].index, sorted[1].index, result]);\n    return result;\n}\n\nmsg.payload = calcAngle([global.get('angle0'), global.get('angle1'), global.get('angle2')])\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 240,
+        "x": 680,
+        "y": 380,
         "wires": [
             [
-                "76934f042d069033"
+                "1a276f740f471e7e",
+                "a7444acf248d46c7",
+                "c0fab36df52812bf",
+                "2a394f728c6479e3"
             ]
         ]
     },
@@ -1235,7 +970,7 @@
         "to": "",
         "reg": false,
         "x": 510,
-        "y": 420,
+        "y": 380,
         "wires": [
             [
                 "4ffb2f19d70e55db"
@@ -1262,7 +997,7 @@
         "to": "",
         "reg": false,
         "x": 510,
-        "y": 620,
+        "y": 520,
         "wires": [
             [
                 "4ffb2f19d70e55db"
@@ -1270,20 +1005,298 @@
         ]
     },
     {
-        "id": "76934f042d069033",
+        "id": "045a668e3817df0f",
+        "type": "function",
+        "z": "0bd8457dda61dcf8",
+        "name": "function 2",
+        "func": "msg.payload = { name: \"CA\", lat: 26.2860863, lon: -80.2916889 }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 820,
+        "wires": [
+            [
+                "58d557b15e9b6359"
+            ]
+        ]
+    },
+    {
+        "id": "d552fe21c49ecc47",
+        "type": "inject",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 800,
+        "wires": [
+            [
+                "045a668e3817df0f"
+            ]
+        ]
+    },
+    {
+        "id": "425ea04b12de0eef",
+        "type": "inject",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 860,
+        "wires": [
+            [
+                "050ce9ec8e0e5b70"
+            ]
+        ]
+    },
+    {
+        "id": "050ce9ec8e0e5b70",
+        "type": "function",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "name": "function 3",
+        "func": "msg.payload = { name: \"UAV\", lat: 26.3160863, lon: -80.3016889, SIDC: \"Mavic\", icon: \":space_invader:\" }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 860,
+        "wires": [
+            [
+                "58d557b15e9b6359"
+            ]
+        ]
+    },
+    {
+        "id": "91e4df67760d9ecb",
+        "type": "inject",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 840,
+        "wires": [
+            [
+                "045a668e3817df0f"
+            ]
+        ]
+    },
+    {
+        "id": "4d6c0f5f2aecc837",
+        "type": "function",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "name": "function 4",
+        "func": "msg.payload = { name: \"UAV\", lat: 26.2660863, lon: -80.2716889, SIDC: \"Mavic3\", icon: \":space_invader:\" }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 900,
+        "wires": [
+            [
+                "58d557b15e9b6359"
+            ]
+        ]
+    },
+    {
+        "id": "a84384895c15a505",
+        "type": "inject",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 880,
+        "wires": [
+            [
+                "7ab40b1439dd56fe",
+                "050ce9ec8e0e5b70"
+            ]
+        ]
+    },
+    {
+        "id": "7ab40b1439dd56fe",
+        "type": "delay",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 320,
+        "y": 900,
+        "wires": [
+            [
+                "4d6c0f5f2aecc837"
+            ]
+        ]
+    },
+    {
+        "id": "58d557b15e9b6359",
+        "type": "ui_worldmap",
+        "z": "0bd8457dda61dcf8",
+        "group": "efc6b7eeb943190c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "DF AoA",
+        "lat": "26.2860863",
+        "lon": "-80.2916889",
+        "zoom": "12",
+        "layer": "OSMG",
+        "cluster": "4",
+        "maxage": "30",
+        "usermenu": "show",
+        "layers": "hide",
+        "panit": "false",
+        "panlock": "true",
+        "zoomlock": "false",
+        "hiderightclick": "true",
+        "coords": "utm",
+        "showgrid": "false",
+        "showruler": "true",
+        "allowFileDrop": "true",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 860,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "1a276f740f471e7e",
+        "type": "function",
+        "z": "0bd8457dda61dcf8",
+        "name": "Compas",
+        "func": "let center = {\n    lat: 26.2860863, \n    lon: -80.2916889\n}\nlet radius = 0.05;\n\nlet angle = msg.payload / 180 * Math.PI;\nlet lat = center.lat + radius * Math.cos(angle);\nlet lon = center.lon + radius * Math.sin(angle);\n\nmsg.payload = { angle, center, name: \"UAV\", lat: lat, lon: lon, SIDC: \"Mavic\", icon: \":space_invader:\" }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 780,
+        "wires": [
+            [
+                "f5bfee82e2ac558e",
+                "58d557b15e9b6359"
+            ]
+        ]
+    },
+    {
+        "id": "f5bfee82e2ac558e",
+        "type": "debug",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "d596e54121afe26c",
         "type": "ui_gauge",
         "z": "0bd8457dda61dcf8",
         "name": "",
         "group": "c0c88598f376b790",
-        "order": 4,
-        "width": 0,
-        "height": 0,
+        "order": 8,
+        "width": 3,
+        "height": 3,
         "gtype": "compass",
-        "title": "Signal Direction",
-        "label": "units",
+        "title": "DoA SM",
+        "label": "Degree",
         "format": "{{value}}",
         "min": 0,
-        "max": "359",
+        "max": "360",
         "colors": [
             "#00b500",
             "#e6e600",
@@ -1293,8 +1306,541 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 940,
-        "y": 240,
+        "x": 1000,
+        "y": 500,
         "wires": []
+    },
+    {
+        "id": "4286dcb382b05067",
+        "type": "debug",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "8c5e56d4758c7d25",
+        "type": "inject",
+        "z": "0bd8457dda61dcf8",
+        "name": "Start Freq 799.985",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "799.985",
+        "payloadType": "num",
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "1a7c50f528940acf",
+                "52162a63ac4f99a9"
+            ]
+        ]
+    },
+    {
+        "id": "a7444acf248d46c7",
+        "type": "ui_chart",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "fef26fd1ecac0a7a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Signal Direction Server Method",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "360",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1070,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "72606d05f808bbdb",
+        "type": "ui_chart",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "fef26fd1ecac0a7a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Signal Direction Server Method",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "360",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1070,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1f4655cf429262ac",
+        "type": "ui_chart",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "fef26fd1ecac0a7a",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Power of Signal",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-50",
+        "ymax": "10",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1020,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c0fab36df52812bf",
+        "type": "ui_chart",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 5,
+        "width": 3,
+        "height": 3,
+        "label": "Signal Direction Client Method",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "360",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1070,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "09f6ab3a1f68aa4d",
+        "type": "ui_chart",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 6,
+        "width": 3,
+        "height": 3,
+        "label": "Signal Direction Server Method",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "360",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1070,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2a394f728c6479e3",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 7,
+        "width": 3,
+        "height": 3,
+        "gtype": "compass",
+        "title": "DoA CM",
+        "label": "Degree",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "360",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1000,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "732fe241ecde2003",
+        "type": "http request",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "method": "GET",
+        "ret": "bin",
+        "paytoqs": "ignore",
+        "url": "http://localhost/aoa/angle-360.bin",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Range",
+                "valueType": "other",
+                "valueValue": "bytes=-12"
+            }
+        ],
+        "x": 110,
+        "y": 680,
+        "wires": [
+            [
+                "e5e7c1be254c2e68"
+            ]
+        ]
+    },
+    {
+        "id": "e5e7c1be254c2e68",
+        "type": "function",
+        "z": "0bd8457dda61dcf8",
+        "name": "parseAngleAndPower",
+        "func": "//msg.headers[\"content-range\"]: \"bytes 6040764-6040767/6040768\"\n\nlet buf= msg.payload;\nmsg.payload = {\n    angle: buf.readInt16LE(4),\n    power: buf.readInt16LE(6),\n    offset: buf.readInt16LE(8),\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 680,
+        "wires": [
+            [
+                "0aec400b0c996d3d",
+                "a19db888ac5af038"
+            ]
+        ]
+    },
+    {
+        "id": "0aec400b0c996d3d",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "get power",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.power",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 660,
+        "wires": [
+            [
+                "1f4655cf429262ac",
+                "fefd27dcca19f6a3",
+                "4dc539c20d88d579"
+            ]
+        ]
+    },
+    {
+        "id": "a19db888ac5af038",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "name": "get angle",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.angle",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 700,
+        "wires": [
+            [
+                "d596e54121afe26c",
+                "09f6ab3a1f68aa4d",
+                "72606d05f808bbdb"
+            ]
+        ]
+    },
+    {
+        "id": "fefd27dcca19f6a3",
+        "type": "ui_gauge",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 9,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Power of Signal",
+        "label": "dBm",
+        "format": "{{value}}",
+        "min": "-50",
+        "max": "10",
+        "colors": [
+            "#1a5fb4",
+            "#26a269",
+            "#ca3838"
+        ],
+        "seg1": "-30",
+        "seg2": "0",
+        "diff": false,
+        "className": "",
+        "x": 1020,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "4dc539c20d88d579",
+        "type": "ui_chart",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "group": "c0c88598f376b790",
+        "order": 10,
+        "width": 3,
+        "height": 3,
+        "label": "Power of Signal",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-40",
+        "ymax": "5",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1020,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "55923f8ea0be1bff",
+        "type": "ui_text_input",
+        "z": "0bd8457dda61dcf8",
+        "name": "",
+        "label": "Gain,dB",
+        "tooltip": "",
+        "group": "c0c88598f376b790",
+        "order": 3,
+        "width": "3",
+        "height": 1,
+        "passthru": false,
+        "mode": "number",
+        "delay": "1000",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 100,
+        "y": 140,
+        "wires": [
+            [
+                "abb6b0088999c091"
+            ]
+        ]
+    },
+    {
+        "id": "bb1b6e8d17f9fc48",
+        "type": "inject",
+        "z": "0bd8457dda61dcf8",
+        "name": "Start Gain 40",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "40",
+        "payloadType": "num",
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "55923f8ea0be1bff",
+                "abb6b0088999c091"
+            ]
+        ]
     }
 ]

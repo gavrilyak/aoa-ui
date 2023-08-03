@@ -5,6 +5,9 @@
 	"private": true,
 	"scripts": {
 		"start": "node-red -u . flows.json"
+	},
+	"dependencies": {
+		"node-red-contrib-letsfiware-ngsi": "~0.14.0",
+		"node-red-contrib-web-worldmap": "~2.37.4"
 	}
-
 }
