@@ -185,16 +185,6 @@
         "hidden": false
     },
     {
-        "id": "09cf74afd8028524",
-        "type": "ui_spacer",
-        "z": "0bd8457dda61dcf8",
-        "name": "spacer",
-        "group": "32043392f63c4d23",
-        "order": 2,
-        "width": 1,
-        "height": 1
-    },
-    {
         "id": "39a5dd8d0dadac75",
         "type": "http request",
         "z": "0bd8457dda61dcf8",
@@ -239,8 +229,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1040,
-        "y": 40,
+        "x": 1060,
+        "y": 20,
         "wires": []
     },
     {
@@ -398,8 +388,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 850,
-        "y": 60,
+        "x": 890,
+        "y": 20,
         "wires": [
             [
                 "da1939a2086e85ad"
@@ -417,7 +407,7 @@
         "syntax": "mustache",
         "template": "<methodCall>\n    <methodName>set_frequency</methodName>\n    <params>\n      <param>\n        <value>\n            <double>{{payload}}</double>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
         "output": "str",
-        "x": 840,
+        "x": 720,
         "y": 20,
         "wires": [
             [
@@ -445,7 +435,7 @@
         "max": "6000",
         "step": "0.001",
         "className": "",
-        "x": 430,
+        "x": 410,
         "y": 20,
         "wires": [
             [
@@ -471,7 +461,7 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 310,
+        "x": 290,
         "y": 40,
         "wires": [
             [
@@ -498,7 +488,7 @@
         "max": "70",
         "step": "1",
         "className": "",
-        "x": 510,
+        "x": 490,
         "y": 60,
         "wires": [
             [
@@ -517,7 +507,7 @@
         "syntax": "mustache",
         "template": "<methodCall>\n    <methodName>set_rx_gain</methodName>\n    <params>\n      <param>\n        <value>\n            <double>{{payload}}</double>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
         "output": "str",
-        "x": 640,
+        "x": 720,
         "y": 60,
         "wires": [
             [
@@ -544,7 +534,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
+        "x": 560,
         "y": 20,
         "wires": [
             [
@@ -830,7 +820,7 @@
         "width": 2,
         "height": 2,
         "gtype": "gage",
-        "title": "Angle1",
+        "title": "Angle1 HF",
         "label": "degrees",
         "format": "{{value}}",
         "min": 0,
@@ -844,7 +834,7 @@
         "seg2": "155",
         "diff": false,
         "className": "",
-        "x": 820,
+        "x": 830,
         "y": 220,
         "wires": []
     },
@@ -858,7 +848,7 @@
         "width": 2,
         "height": 2,
         "gtype": "gage",
-        "title": "Angle2",
+        "title": "Angle2 HF",
         "label": "degrees",
         "format": "{{value}}",
         "min": 0,
@@ -872,7 +862,7 @@
         "seg2": "155",
         "diff": false,
         "className": "",
-        "x": 820,
+        "x": 830,
         "y": 340,
         "wires": []
     },
@@ -886,7 +876,7 @@
         "width": 2,
         "height": 2,
         "gtype": "gage",
-        "title": "Angle3",
+        "title": "Angle3 HF",
         "label": "degrees",
         "format": "{{value}}",
         "min": 0,
@@ -900,7 +890,7 @@
         "seg2": "155",
         "diff": false,
         "className": "",
-        "x": 820,
+        "x": 830,
         "y": 460,
         "wires": []
     },
@@ -1019,8 +1009,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
-        "y": 1260,
+        "x": 480,
+        "y": 1320,
         "wires": [
             []
         ]
@@ -1047,8 +1037,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 1240,
+        "x": 80,
+        "y": 1300,
         "wires": [
             [
                 "045a668e3817df0f"
@@ -1077,8 +1067,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 320,
-        "y": 1300,
+        "x": 300,
+        "y": 1360,
         "wires": [
             [
                 "050ce9ec8e0e5b70"
@@ -1097,8 +1087,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
-        "y": 1300,
+        "x": 480,
+        "y": 1360,
         "wires": [
             []
         ]
@@ -1125,8 +1115,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 90,
-        "y": 1280,
+        "x": 70,
+        "y": 1340,
         "wires": [
             [
                 "045a668e3817df0f"
@@ -1145,8 +1135,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
-        "y": 1340,
+        "x": 480,
+        "y": 1400,
         "wires": [
             []
         ]
@@ -1173,8 +1163,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 90,
-        "y": 1320,
+        "x": 70,
+        "y": 1380,
         "wires": [
             [
                 "7ab40b1439dd56fe",
@@ -1200,8 +1190,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 320,
-        "y": 1340,
+        "x": 300,
+        "y": 1400,
         "wires": [
             [
                 "4d6c0f5f2aecc837"
@@ -1255,7 +1245,7 @@
         "width": 3,
         "height": 3,
         "gtype": "compass",
-        "title": "DoA Coherent360",
+        "title": "DoA 298-517 MHz",
         "label": "Degree",
         "format": "{{value}}",
         "min": 0,
@@ -1270,7 +1260,7 @@
         "diff": false,
         "className": "",
         "x": 1190,
-        "y": 940,
+        "y": 1100,
         "wires": []
     },
     {
@@ -1375,7 +1365,7 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "label": "Signal Direction Coherent Method",
+        "label": "Signal Direction 298-517 MHz",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -1404,7 +1394,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1080,
+        "x": 1070,
         "y": 1140,
         "wires": [
             []
@@ -1449,7 +1439,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 1020,
-        "y": 1060,
+        "y": 940,
         "wires": [
             []
         ]
@@ -1463,7 +1453,7 @@
         "order": 5,
         "width": 3,
         "height": 3,
-        "label": "Signal Direction C Coherent Method",
+        "label": "Signal Direction 120-298 MHz",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -1492,7 +1482,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1250,
+        "x": 1230,
         "y": 1200,
         "wires": [
             []
@@ -1507,7 +1497,7 @@
         "order": 6,
         "width": 3,
         "height": 3,
-        "label": "Signal Direction Coherent Method",
+        "label": "Signal Direction 298-517 MHz",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -1536,8 +1526,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1240,
-        "y": 1100,
+        "x": 1230,
+        "y": 1060,
         "wires": [
             []
         ]
@@ -1552,7 +1542,7 @@
         "width": 3,
         "height": 3,
         "gtype": "compass",
-        "title": "DoA Coherent360C",
+        "title": "DoA 120-298 MHz",
         "label": "Degree",
         "format": "{{value}}",
         "min": 0,
@@ -1617,7 +1607,8 @@
         "wires": [
             [
                 "0aec400b0c996d3d",
-                "a19db888ac5af038"
+                "a19db888ac5af038",
+                "5b6f2f976ef9c9fd"
             ]
         ]
     },
@@ -1854,7 +1845,8 @@
         "wires": [
             [
                 "6156106a2fc6a705",
-                "84259087a8aa491a"
+                "c5d037ab7cb443a0",
+                "09d8c28fb13c0da3"
             ]
         ]
     },
@@ -1862,6 +1854,7 @@
         "id": "6156106a2fc6a705",
         "type": "change",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "get power",
         "rules": [
             {
@@ -1881,35 +1874,6 @@
         "y": 1160,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "84259087a8aa491a",
-        "type": "change",
-        "z": "0bd8457dda61dcf8",
-        "name": "get angle",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.angle",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 560,
-        "y": 1200,
-        "wires": [
-            [
-                "2a394f728c6479e3",
-                "c0fab36df52812bf",
-                "467e754e59ba7b4d"
-            ]
         ]
     },
     {
@@ -1995,6 +1959,7 @@
         "id": "db73899fbda0d65f",
         "type": "change",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "get power",
         "rules": [
             {
@@ -2099,6 +2064,7 @@
         "id": "7a90b30399967003",
         "type": "change",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "get power",
         "rules": [
             {
@@ -2203,6 +2169,7 @@
         "id": "fd46a5eadbf175d5",
         "type": "change",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "get power",
         "rules": [
             {
@@ -2234,7 +2201,7 @@
         "width": 2,
         "height": 2,
         "gtype": "gage",
-        "title": "Angle1 C",
+        "title": "Angle1 LF",
         "label": "degrees",
         "format": "{{value}}",
         "min": 0,
@@ -2248,7 +2215,7 @@
         "seg2": "155",
         "diff": false,
         "className": "",
-        "x": 820,
+        "x": 830,
         "y": 620,
         "wires": []
     },
@@ -2262,7 +2229,7 @@
         "width": 2,
         "height": 2,
         "gtype": "gage",
-        "title": "Angle2 C",
+        "title": "Angle2 LF",
         "label": "degrees",
         "format": "{{value}}",
         "min": 0,
@@ -2276,7 +2243,7 @@
         "seg2": "155",
         "diff": false,
         "className": "",
-        "x": 820,
+        "x": 830,
         "y": 740,
         "wires": []
     },
@@ -2290,7 +2257,7 @@
         "width": 2,
         "height": 2,
         "gtype": "gage",
-        "title": "Angle3 C",
+        "title": "Angle3 LF",
         "label": "degrees",
         "format": "{{value}}",
         "min": 0,
@@ -2304,7 +2271,7 @@
         "seg2": "155",
         "diff": false,
         "className": "",
-        "x": 820,
+        "x": 830,
         "y": 860,
         "wires": []
     },
@@ -2312,11 +2279,12 @@
         "id": "8710319e1df64e70",
         "type": "change",
         "z": "0bd8457dda61dcf8",
-        "name": "Mem Angle0",
+        "d": true,
+        "name": "Mem Angle0c",
         "rules": [
             {
                 "t": "set",
-                "p": "angle0",
+                "p": "angle0c",
                 "pt": "global",
                 "to": "payload",
                 "tot": "msg"
@@ -2327,7 +2295,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 530,
+        "x": 540,
         "y": 580,
         "wires": [
             [
@@ -2348,7 +2316,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
+        "x": 720,
         "y": 700,
         "wires": [
             [
@@ -2360,11 +2328,12 @@
         "id": "67d907291db902f6",
         "type": "change",
         "z": "0bd8457dda61dcf8",
-        "name": "Mem Angle1",
+        "d": true,
+        "name": "Mem Angle1c",
         "rules": [
             {
                 "t": "set",
-                "p": "angle1",
+                "p": "angle1c",
                 "pt": "global",
                 "to": "payload",
                 "tot": "msg"
@@ -2375,7 +2344,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 530,
+        "x": 540,
         "y": 700,
         "wires": [
             [
@@ -2387,11 +2356,12 @@
         "id": "99bbb4101d39637f",
         "type": "change",
         "z": "0bd8457dda61dcf8",
-        "name": "Mem Angle2",
+        "d": true,
+        "name": "Mem Angle2c",
         "rules": [
             {
                 "t": "set",
-                "p": "angle2",
+                "p": "angle2c",
                 "pt": "global",
                 "to": "payload",
                 "tot": "msg"
@@ -2402,7 +2372,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 530,
+        "x": 540,
         "y": 820,
         "wires": [
             [
@@ -2555,7 +2525,7 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "label": "Signal Direction C Coherent Method",
+        "label": "Signal Direction 120-298 MHz",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -2584,10 +2554,103 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1090,
+        "x": 1070,
         "y": 1280,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "5b6f2f976ef9c9fd",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "name": "get offset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.offset",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c5d037ab7cb443a0",
+        "type": "change",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "name": "get offset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.offset",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 1240,
+        "wires": [
+            [
+                "24f0a5c631e77fda"
+            ]
+        ]
+    },
+    {
+        "id": "09d8c28fb13c0da3",
+        "type": "function",
+        "z": "0bd8457dda61dcf8",
+        "name": "Function toRealAngle(Offset)",
+        "func": "function toRealAngle(offset, x) {\n    return (((x + 360) % 360) + offset) % 360;\n}\nmsg.payload = toRealAngle(msg.payload.offset, msg.payload.angle)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 1200,
+        "wires": [
+            [
+                "c0fab36df52812bf",
+                "2a394f728c6479e3",
+                "467e754e59ba7b4d"
+            ]
+        ]
+    },
+    {
+        "id": "24f0a5c631e77fda",
+        "type": "ui_text",
+        "z": "0bd8457dda61dcf8",
+        "d": true,
+        "group": "c0c88598f376b790",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Offset C",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 720,
+        "y": 1240,
+        "wires": []
     }
 ]
