@@ -120,7 +120,7 @@
         "tab": "cbcb4239ed62258f",
         "order": 1,
         "disp": true,
-        "width": "6",
+        "width": 6,
         "collapse": false,
         "className": ""
     },
@@ -425,7 +425,7 @@
         "tooltip": "",
         "group": "c0c88598f376b790",
         "order": 2,
-        "width": "3",
+        "width": 3,
         "height": 1,
         "passthru": true,
         "outs": "end",
@@ -452,7 +452,7 @@
         "tooltip": "",
         "group": "c0c88598f376b790",
         "order": 1,
-        "width": "3",
+        "width": 3,
         "height": 1,
         "passthru": false,
         "mode": "number",
@@ -478,7 +478,7 @@
         "tooltip": "",
         "group": "c0c88598f376b790",
         "order": 4,
-        "width": "3",
+        "width": 3,
         "height": 1,
         "passthru": false,
         "outs": "end",
@@ -1009,8 +1009,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
-        "y": 1320,
+        "x": 1820,
+        "y": 1200,
         "wires": [
             []
         ]
@@ -1037,8 +1037,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 80,
-        "y": 1300,
+        "x": 1520,
+        "y": 1180,
         "wires": [
             [
                 "045a668e3817df0f"
@@ -1067,8 +1067,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 300,
-        "y": 1360,
+        "x": 1680,
+        "y": 1240,
         "wires": [
             [
                 "050ce9ec8e0e5b70"
@@ -1087,8 +1087,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
-        "y": 1360,
+        "x": 1820,
+        "y": 1240,
         "wires": [
             []
         ]
@@ -1115,8 +1115,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 70,
-        "y": 1340,
+        "x": 1510,
+        "y": 1220,
         "wires": [
             [
                 "045a668e3817df0f"
@@ -1135,8 +1135,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
-        "y": 1400,
+        "x": 1820,
+        "y": 1280,
         "wires": [
             []
         ]
@@ -1163,8 +1163,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 70,
-        "y": 1380,
+        "x": 1510,
+        "y": 1260,
         "wires": [
             [
                 "7ab40b1439dd56fe",
@@ -1190,8 +1190,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 300,
-        "y": 1400,
+        "x": 1680,
+        "y": 1280,
         "wires": [
             [
                 "4d6c0f5f2aecc837"
@@ -1241,11 +1241,11 @@
         "z": "0bd8457dda61dcf8",
         "name": "",
         "group": "c0c88598f376b790",
-        "order": 8,
+        "order": 7,
         "width": 3,
         "height": 3,
         "gtype": "compass",
-        "title": "DoA 298-517 MHz",
+        "title": "DoA 1.12-1.92G",
         "label": "Degree",
         "format": "{{value}}",
         "min": 0,
@@ -1259,7 +1259,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1190,
+        "x": 1180,
         "y": 1100,
         "wires": []
     },
@@ -1285,7 +1285,7 @@
         "id": "8c5e56d4758c7d25",
         "type": "inject",
         "z": "0bd8457dda61dcf8",
-        "name": "Start Freq 299.995",
+        "name": "Start Freq 889",
         "props": [
             {
                 "p": "payload"
@@ -1300,9 +1300,9 @@
         "once": true,
         "onceDelay": "0.5",
         "topic": "",
-        "payload": "299.995",
+        "payload": "889",
         "payloadType": "num",
-        "x": 130,
+        "x": 120,
         "y": 20,
         "wires": [
             [
@@ -1365,7 +1365,7 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "label": "Signal Direction 298-517 MHz",
+        "label": "Signal Direction 1700-1920M",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -1394,7 +1394,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1070,
+        "x": 1060,
         "y": 1140,
         "wires": [
             []
@@ -1416,8 +1416,8 @@
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
-        "ymin": "-50",
-        "ymax": "10",
+        "ymin": "-70",
+        "ymax": "5",
         "removeOlder": "10",
         "removeOlderPoints": "",
         "removeOlderUnit": "1",
@@ -1450,10 +1450,10 @@
         "z": "0bd8457dda61dcf8",
         "name": "",
         "group": "c0c88598f376b790",
-        "order": 5,
+        "order": 6,
         "width": 3,
         "height": 3,
-        "label": "Signal Direction 120-298 MHz",
+        "label": "DoA 0.5-1.12G",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -1462,7 +1462,7 @@
         "dot": false,
         "ymin": "0",
         "ymax": "360",
-        "removeOlder": "10",
+        "removeOlder": "5",
         "removeOlderPoints": "",
         "removeOlderUnit": "1",
         "cutout": 0,
@@ -1482,7 +1482,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1230,
+        "x": 1180,
         "y": 1200,
         "wires": [
             []
@@ -1494,10 +1494,10 @@
         "z": "0bd8457dda61dcf8",
         "name": "",
         "group": "c0c88598f376b790",
-        "order": 6,
+        "order": 8,
         "width": 3,
         "height": 3,
-        "label": "Signal Direction 298-517 MHz",
+        "label": "DoA 1.12-1.92G",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -1506,7 +1506,7 @@
         "dot": false,
         "ymin": "0",
         "ymax": "360",
-        "removeOlder": "10",
+        "removeOlder": "5",
         "removeOlderPoints": "",
         "removeOlderUnit": "1",
         "cutout": 0,
@@ -1526,7 +1526,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1230,
+        "x": 1180,
         "y": 1060,
         "wires": [
             []
@@ -1538,11 +1538,11 @@
         "z": "0bd8457dda61dcf8",
         "name": "",
         "group": "c0c88598f376b790",
-        "order": 7,
+        "order": 5,
         "width": 3,
         "height": 3,
         "gtype": "compass",
-        "title": "DoA 120-298 MHz",
+        "title": "DoA 0.5-1.12G",
         "label": "Degree",
         "format": "{{value}}",
         "min": 0,
@@ -1556,7 +1556,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1190,
+        "x": 1180,
         "y": 1240,
         "wires": []
     },
@@ -1680,21 +1680,21 @@
         "width": 3,
         "height": 3,
         "gtype": "gage",
-        "title": "Power of Signal",
+        "title": "RF Power",
         "label": "dBm",
         "format": "{{value}}",
-        "min": "-50",
-        "max": "10",
+        "min": "-70",
+        "max": "5",
         "colors": [
             "#1a5fb4",
             "#26a269",
             "#ca3838"
         ],
-        "seg1": "-30",
-        "seg2": "0",
+        "seg1": "-55",
+        "seg2": "-10",
         "diff": false,
         "className": "",
-        "x": 1180,
+        "x": 1160,
         "y": 980,
         "wires": []
     },
@@ -1707,16 +1707,16 @@
         "order": 10,
         "width": 3,
         "height": 3,
-        "label": "Power of Signal",
+        "label": "RF Power",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
-        "ymin": "-40",
+        "ymin": "-70",
         "ymax": "5",
-        "removeOlder": "10",
+        "removeOlder": "5",
         "removeOlderPoints": "",
         "removeOlderUnit": "1",
         "cutout": 0,
@@ -1736,7 +1736,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1180,
+        "x": 1160,
         "y": 1020,
         "wires": [
             []
@@ -1751,7 +1751,7 @@
         "tooltip": "",
         "group": "c0c88598f376b790",
         "order": 3,
-        "width": "3",
+        "width": 3,
         "height": 1,
         "passthru": false,
         "mode": "number",
@@ -1845,7 +1845,6 @@
         "wires": [
             [
                 "6156106a2fc6a705",
-                "c5d037ab7cb443a0",
                 "09d8c28fb13c0da3"
             ]
         ]
@@ -2412,9 +2411,9 @@
         "id": "b5141eb5bea660c2",
         "type": "comment",
         "z": "0bd8457dda61dcf8",
-        "name": "",
+        "name": "Charts",
         "info": "",
-        "x": 980,
+        "x": 970,
         "y": 100,
         "wires": []
     },
@@ -2442,9 +2441,9 @@
         "id": "c33a5b59d377acca",
         "type": "comment",
         "z": "0bd8457dda61dcf8",
-        "name": "",
+        "name": "Charts",
         "info": "",
-        "x": 980,
+        "x": 970,
         "y": 900,
         "wires": []
     },
@@ -2465,7 +2464,7 @@
         "d": true,
         "name": "",
         "group": "c0c88598f376b790",
-        "order": 8,
+        "order": 11,
         "width": 3,
         "height": 3,
         "gtype": "compass",
@@ -2494,7 +2493,7 @@
         "d": true,
         "name": "",
         "group": "c0c88598f376b790",
-        "order": 8,
+        "order": 12,
         "width": 3,
         "height": 3,
         "gtype": "compass",
@@ -2525,7 +2524,7 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "label": "Signal Direction 120-298 MHz",
+        "label": "Signal Direction 800-1100M",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -2554,7 +2553,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1070,
+        "x": 1060,
         "y": 1280,
         "wires": [
             []
@@ -2587,34 +2586,6 @@
         ]
     },
     {
-        "id": "c5d037ab7cb443a0",
-        "type": "change",
-        "z": "0bd8457dda61dcf8",
-        "d": true,
-        "name": "get offset",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.offset",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 560,
-        "y": 1240,
-        "wires": [
-            [
-                "24f0a5c631e77fda"
-            ]
-        ]
-    },
-    {
         "id": "09d8c28fb13c0da3",
         "type": "function",
         "z": "0bd8457dda61dcf8",
@@ -2634,23 +2605,5 @@
                 "467e754e59ba7b4d"
             ]
         ]
-    },
-    {
-        "id": "24f0a5c631e77fda",
-        "type": "ui_text",
-        "z": "0bd8457dda61dcf8",
-        "d": true,
-        "group": "c0c88598f376b790",
-        "order": 12,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Offset C",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 720,
-        "y": 1240,
-        "wires": []
     }
 ]
