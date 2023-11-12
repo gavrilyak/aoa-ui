@@ -8,6 +8,14 @@
         "env": []
     },
     {
+        "id": "37c940bbb3d03df0",
+        "type": "tab",
+        "label": "Calibration",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "cbcb4239ed62258f",
         "type": "ui_tab",
         "name": "Home   DF-210 Cell Antenna",
@@ -357,15 +365,15 @@
         "title": "Power 1",
         "label": "dB",
         "format": "{{value}}",
-        "min": "-120",
+        "min": "-100",
         "max": "20",
         "colors": [
             "#1c71d8",
             "#2ec27e",
             "#ed333b"
         ],
-        "seg1": "-35",
-        "seg2": "0",
+        "seg1": "-75",
+        "seg2": "-10",
         "diff": false,
         "className": "",
         "x": 820,
@@ -661,15 +669,15 @@
         "title": "Power 2",
         "label": "dB",
         "format": "{{value}}",
-        "min": "-120",
+        "min": "-100",
         "max": "20",
         "colors": [
             "#1c71d8",
             "#2ec27e",
             "#ed333b"
         ],
-        "seg1": "-35",
-        "seg2": "0",
+        "seg1": "-75",
+        "seg2": "-10",
         "diff": false,
         "className": "",
         "x": 820,
@@ -795,15 +803,15 @@
         "title": "Power 3",
         "label": "dB",
         "format": "{{value}}",
-        "min": "-120",
+        "min": "-100",
         "max": "20",
         "colors": [
             "#1c71d8",
             "#2ec27e",
             "#ed333b"
         ],
-        "seg1": "-35",
-        "seg2": "0",
+        "seg1": "-75",
+        "seg2": "-10",
         "diff": false,
         "className": "",
         "x": 820,
@@ -1245,7 +1253,7 @@
         "width": 3,
         "height": 3,
         "gtype": "compass",
-        "title": "DoA 1.12-1.92G",
+        "title": "DoA 309-535M",
         "label": "Degree",
         "format": "{{value}}",
         "min": 0,
@@ -1285,7 +1293,7 @@
         "id": "8c5e56d4758c7d25",
         "type": "inject",
         "z": "0bd8457dda61dcf8",
-        "name": "Start Freq 889",
+        "name": "Start Freq 535",
         "props": [
             {
                 "p": "payload"
@@ -1300,7 +1308,7 @@
         "once": true,
         "onceDelay": "0.5",
         "topic": "",
-        "payload": "889",
+        "payload": "535",
         "payloadType": "num",
         "x": 120,
         "y": 20,
@@ -1365,7 +1373,7 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "label": "Signal Direction 1700-1920M",
+        "label": "Signal Direction 309-535M",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -1416,8 +1424,8 @@
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
-        "ymin": "-70",
-        "ymax": "5",
+        "ymin": "-100",
+        "ymax": "20",
         "removeOlder": "10",
         "removeOlderPoints": "",
         "removeOlderUnit": "1",
@@ -1453,7 +1461,7 @@
         "order": 6,
         "width": 3,
         "height": 3,
-        "label": "DoA 0.5-1.12G",
+        "label": "DoA 120-309M",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -1497,7 +1505,7 @@
         "order": 8,
         "width": 3,
         "height": 3,
-        "label": "DoA 1.12-1.92G",
+        "label": "DoA 309-535M",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -1542,7 +1550,7 @@
         "width": 3,
         "height": 3,
         "gtype": "compass",
-        "title": "DoA 0.5-1.12G",
+        "title": "DoA 120-309M",
         "label": "Degree",
         "format": "{{value}}",
         "min": 0,
@@ -1683,14 +1691,14 @@
         "title": "RF Power",
         "label": "dBm",
         "format": "{{value}}",
-        "min": "-70",
-        "max": "5",
+        "min": "-100",
+        "max": "20",
         "colors": [
             "#1a5fb4",
             "#26a269",
             "#ca3838"
         ],
-        "seg1": "-55",
+        "seg1": "-75",
         "seg2": "-10",
         "diff": false,
         "className": "",
@@ -1714,8 +1722,8 @@
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
-        "ymin": "-70",
-        "ymax": "5",
+        "ymin": "-100",
+        "ymax": "20",
         "removeOlder": "5",
         "removeOlderPoints": "",
         "removeOlderUnit": "1",
@@ -2524,7 +2532,7 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "label": "Signal Direction 800-1100M",
+        "label": "Signal Direction 120-309M",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -2603,6 +2611,451 @@
                 "c0fab36df52812bf",
                 "2a394f728c6479e3",
                 "467e754e59ba7b4d"
+            ]
+        ]
+    },
+    {
+        "id": "2f5bd29957c47a8f",
+        "type": "ui_text_input",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "label": "F Cal, MHz",
+        "tooltip": "",
+        "group": "52a3b3d856fb2081",
+        "order": 10,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "mode": "number",
+        "delay": "1000",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 390,
+        "y": 60,
+        "wires": [
+            [
+                "d6a4374d04f34d02"
+            ]
+        ]
+    },
+    {
+        "id": "d6a4374d04f34d02",
+        "type": "ui_slider",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "label": "F Cal",
+        "tooltip": "",
+        "group": "52a3b3d856fb2081",
+        "order": 11,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "70",
+        "max": "6000",
+        "step": "0.001",
+        "className": "",
+        "x": 570,
+        "y": 40,
+        "wires": [
+            [
+                "808d216c42857ede"
+            ]
+        ]
+    },
+    {
+        "id": "808d216c42857ede",
+        "type": "change",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(msg.payload) * 1000000",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 40,
+        "wires": [
+            [
+                "dc5f2f228404ad52"
+            ]
+        ]
+    },
+    {
+        "id": "dc5f2f228404ad52",
+        "type": "template",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<methodCall>\n    <methodName>set_frequency</methodName>\n    <params>\n      <param>\n        <value>\n            <double>{{payload}}</double>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
+        "output": "str",
+        "x": 880,
+        "y": 40,
+        "wires": [
+            [
+                "f5fc4ede96d18804"
+            ]
+        ]
+    },
+    {
+        "id": "f5fc4ede96d18804",
+        "type": "http request",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8090/RPC2",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1050,
+        "y": 180,
+        "wires": [
+            [
+                "f57d97a69f370c97"
+            ]
+        ]
+    },
+    {
+        "id": "cc9946fbd0851dbf",
+        "type": "inject",
+        "z": "37c940bbb3d03df0",
+        "name": "Start Freq 500",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "500",
+        "payloadType": "num",
+        "x": 140,
+        "y": 40,
+        "wires": [
+            [
+                "d6a4374d04f34d02",
+                "2f5bd29957c47a8f"
+            ]
+        ]
+    },
+    {
+        "id": "c10c81089d8187da",
+        "type": "ui_text_input",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "label": "ATT Cal, dB",
+        "tooltip": "",
+        "group": "52a3b3d856fb2081",
+        "order": 12,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "mode": "number",
+        "delay": "1000",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 530,
+        "y": 120,
+        "wires": [
+            [
+                "4ef8de896d9ba931"
+            ]
+        ]
+    },
+    {
+        "id": "4ef8de896d9ba931",
+        "type": "ui_slider",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "label": "ATT Cal",
+        "tooltip": "",
+        "group": "52a3b3d856fb2081",
+        "order": 13,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "0",
+        "max": "89.75",
+        "step": "0.25",
+        "className": "",
+        "x": 740,
+        "y": 100,
+        "wires": [
+            [
+                "770b7cac7983d1c9"
+            ]
+        ]
+    },
+    {
+        "id": "770b7cac7983d1c9",
+        "type": "template",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<methodCall>\n    <methodName>set_att_tx1</methodName>\n    <params>\n      <param>\n        <value>\n            <double>{{payload}}</double>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
+        "output": "str",
+        "x": 880,
+        "y": 100,
+        "wires": [
+            [
+                "f5fc4ede96d18804"
+            ]
+        ]
+    },
+    {
+        "id": "86f4fccc781a127a",
+        "type": "inject",
+        "z": "37c940bbb3d03df0",
+        "name": "Start Attenuator 89.75",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "89.75",
+        "payloadType": "num",
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "4ef8de896d9ba931",
+                "c10c81089d8187da"
+            ]
+        ]
+    },
+    {
+        "id": "ea775e8fc4c15881",
+        "type": "template",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<methodCall>\n    <methodName>set_tx_enable</methodName>\n    <params>\n      <param>\n        <value>\n            <int>{{payload}}</int>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
+        "output": "str",
+        "x": 880,
+        "y": 180,
+        "wires": [
+            [
+                "f5fc4ede96d18804"
+            ]
+        ]
+    },
+    {
+        "id": "b587d44deb51ed07",
+        "type": "inject",
+        "z": "37c940bbb3d03df0",
+        "name": "Start Cal TX En/Dis",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "254f9303ef05eb7f"
+            ]
+        ]
+    },
+    {
+        "id": "254f9303ef05eb7f",
+        "type": "ui_switch",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "label": "Cal En/Dis",
+        "tooltip": "",
+        "group": "52a3b3d856fb2081",
+        "order": 14,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 310,
+        "y": 180,
+        "wires": [
+            [
+                "ea775e8fc4c15881",
+                "18f51fa3f4279670"
+            ]
+        ]
+    },
+    {
+        "id": "f57d97a69f370c97",
+        "type": "debug",
+        "z": "37c940bbb3d03df0",
+        "d": true,
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "18f51fa3f4279670",
+        "type": "switch",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 290,
+        "y": 260,
+        "wires": [
+            [
+                "43700747a4a37461"
+            ],
+            [
+                "34798f7c0cee4d0c"
+            ]
+        ]
+    },
+    {
+        "id": "34798f7c0cee4d0c",
+        "type": "change",
+        "z": "37c940bbb3d03df0",
+        "name": "ATT=0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 280,
+        "wires": [
+            [
+                "c10c81089d8187da",
+                "4ef8de896d9ba931"
+            ]
+        ]
+    },
+    {
+        "id": "43700747a4a37461",
+        "type": "change",
+        "z": "37c940bbb3d03df0",
+        "name": "ATT=89.75",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "89.75",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 240,
+        "wires": [
+            [
+                "c10c81089d8187da",
+                "4ef8de896d9ba931"
             ]
         ]
     }
