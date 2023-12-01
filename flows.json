@@ -249,10 +249,6 @@
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
         "repeat": "0.25",
@@ -425,38 +421,11 @@
         ]
     },
     {
-        "id": "1a7c50f528940acf",
-        "type": "ui_slider",
-        "z": "0bd8457dda61dcf8",
-        "name": "",
-        "label": "F",
-        "tooltip": "",
-        "group": "c0c88598f376b790",
-        "order": 2,
-        "width": 3,
-        "height": 1,
-        "passthru": true,
-        "outs": "end",
-        "topic": "topic",
-        "topicType": "msg",
-        "min": "70",
-        "max": "6000",
-        "step": "0.001",
-        "className": "",
-        "x": 410,
-        "y": 20,
-        "wires": [
-            [
-                "c429f388c5d6c126"
-            ]
-        ]
-    },
-    {
         "id": "52162a63ac4f99a9",
         "type": "ui_text_input",
         "z": "0bd8457dda61dcf8",
         "name": "",
-        "label": "F,MHz",
+        "label": "F,kHz",
         "tooltip": "",
         "group": "c0c88598f376b790",
         "order": 1,
@@ -470,37 +439,10 @@
         "className": "",
         "topicType": "msg",
         "x": 290,
-        "y": 40,
+        "y": 20,
         "wires": [
             [
-                "1a7c50f528940acf"
-            ]
-        ]
-    },
-    {
-        "id": "abb6b0088999c091",
-        "type": "ui_slider",
-        "z": "0bd8457dda61dcf8",
-        "name": "",
-        "label": "G",
-        "tooltip": "",
-        "group": "c0c88598f376b790",
-        "order": 4,
-        "width": 3,
-        "height": 1,
-        "passthru": false,
-        "outs": "end",
-        "topic": "topic",
-        "topicType": "msg",
-        "min": "0",
-        "max": "70",
-        "step": "1",
-        "className": "",
-        "x": 490,
-        "y": 60,
-        "wires": [
-            [
-                "20132f0f32498a95"
+                "c429f388c5d6c126"
             ]
         ]
     },
@@ -533,7 +475,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$number(msg.payload) * 1000000",
+                "to": "$number(msg.payload) * 1000",
                 "tot": "jsonata"
             }
         ],
@@ -1293,14 +1235,10 @@
         "id": "8c5e56d4758c7d25",
         "type": "inject",
         "z": "0bd8457dda61dcf8",
-        "name": "Start Freq 535",
+        "name": "Start Freq 500000",
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
         "repeat": "",
@@ -1308,13 +1246,12 @@
         "once": true,
         "onceDelay": "0.5",
         "topic": "",
-        "payload": "535",
+        "payload": "500000",
         "payloadType": "num",
-        "x": 120,
+        "x": 130,
         "y": 20,
         "wires": [
             [
-                "1a7c50f528940acf",
                 "52162a63ac4f99a9"
             ]
         ]
@@ -1769,10 +1706,10 @@
         "className": "",
         "topicType": "msg",
         "x": 300,
-        "y": 80,
+        "y": 60,
         "wires": [
             [
-                "abb6b0088999c091"
+                "20132f0f32498a95"
             ]
         ]
     },
@@ -1784,10 +1721,6 @@
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
         "repeat": "",
@@ -1801,8 +1734,7 @@
         "y": 60,
         "wires": [
             [
-                "55923f8ea0be1bff",
-                "abb6b0088999c091"
+                "55923f8ea0be1bff"
             ]
         ]
     },
@@ -2619,48 +2551,21 @@
         "type": "ui_text_input",
         "z": "37c940bbb3d03df0",
         "name": "",
-        "label": "F Cal, MHz",
+        "label": "F Cal, kHz",
         "tooltip": "",
         "group": "52a3b3d856fb2081",
         "order": 10,
         "width": 3,
         "height": 1,
-        "passthru": false,
+        "passthru": true,
         "mode": "number",
         "delay": "1000",
         "topic": "topic",
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 390,
-        "y": 60,
-        "wires": [
-            [
-                "d6a4374d04f34d02"
-            ]
-        ]
-    },
-    {
-        "id": "d6a4374d04f34d02",
-        "type": "ui_slider",
-        "z": "37c940bbb3d03df0",
-        "name": "",
-        "label": "F Cal",
-        "tooltip": "",
-        "group": "52a3b3d856fb2081",
-        "order": 11,
-        "width": 3,
-        "height": 1,
-        "passthru": true,
-        "outs": "end",
-        "topic": "topic",
-        "topicType": "msg",
-        "min": "70",
-        "max": "6000",
-        "step": "0.001",
-        "className": "",
-        "x": 570,
-        "y": 40,
+        "x": 710,
+        "y": 80,
         "wires": [
             [
                 "808d216c42857ede"
@@ -2677,7 +2582,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$number(msg.payload) * 1000000",
+                "to": "$number(msg.payload) * 1000",
                 "tot": "jsonata"
             }
         ],
@@ -2686,8 +2591,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 720,
-        "y": 40,
+        "x": 880,
+        "y": 80,
         "wires": [
             [
                 "dc5f2f228404ad52"
@@ -2705,8 +2610,8 @@
         "syntax": "mustache",
         "template": "<methodCall>\n    <methodName>set_frequency</methodName>\n    <params>\n      <param>\n        <value>\n            <double>{{payload}}</double>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
         "output": "str",
-        "x": 880,
-        "y": 40,
+        "x": 920,
+        "y": 160,
         "wires": [
             [
                 "f5fc4ede96d18804"
@@ -2729,42 +2634,10 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1050,
-        "y": 180,
+        "x": 1090,
+        "y": 160,
         "wires": [
-            [
-                "f57d97a69f370c97"
-            ]
-        ]
-    },
-    {
-        "id": "cc9946fbd0851dbf",
-        "type": "inject",
-        "z": "37c940bbb3d03df0",
-        "name": "Start Freq 500",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "0.5",
-        "topic": "",
-        "payload": "500",
-        "payloadType": "num",
-        "x": 140,
-        "y": 40,
-        "wires": [
-            [
-                "d6a4374d04f34d02",
-                "2f5bd29957c47a8f"
-            ]
+            []
         ]
     },
     {
@@ -2778,42 +2651,15 @@
         "order": 12,
         "width": 3,
         "height": 1,
-        "passthru": false,
+        "passthru": true,
         "mode": "number",
         "delay": "1000",
         "topic": "topic",
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 530,
-        "y": 120,
-        "wires": [
-            [
-                "4ef8de896d9ba931"
-            ]
-        ]
-    },
-    {
-        "id": "4ef8de896d9ba931",
-        "type": "ui_slider",
-        "z": "37c940bbb3d03df0",
-        "name": "",
-        "label": "ATT Cal",
-        "tooltip": "",
-        "group": "52a3b3d856fb2081",
-        "order": 13,
-        "width": 3,
-        "height": 1,
-        "passthru": true,
-        "outs": "end",
-        "topic": "topic",
-        "topicType": "msg",
-        "min": "0",
-        "max": "89.75",
-        "step": "0.25",
-        "className": "",
-        "x": 740,
-        "y": 100,
+        "x": 710,
+        "y": 140,
         "wires": [
             [
                 "770b7cac7983d1c9"
@@ -2831,11 +2677,11 @@
         "syntax": "mustache",
         "template": "<methodCall>\n    <methodName>set_att_tx1</methodName>\n    <params>\n      <param>\n        <value>\n            <double>{{payload}}</double>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
         "output": "str",
-        "x": 880,
-        "y": 100,
+        "x": 920,
+        "y": 240,
         "wires": [
             [
-                "f5fc4ede96d18804"
+                "38b2db83f6330bb6"
             ]
         ]
     },
@@ -2847,10 +2693,6 @@
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
         "repeat": "",
@@ -2861,10 +2703,9 @@
         "payload": "89.75",
         "payloadType": "num",
         "x": 120,
-        "y": 100,
+        "y": 140,
         "wires": [
             [
-                "4ef8de896d9ba931",
                 "c10c81089d8187da"
             ]
         ]
@@ -2880,11 +2721,11 @@
         "syntax": "mustache",
         "template": "<methodCall>\n    <methodName>set_tx_enable</methodName>\n    <params>\n      <param>\n        <value>\n            <int>{{payload}}</int>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
         "output": "str",
-        "x": 880,
-        "y": 180,
+        "x": 920,
+        "y": 320,
         "wires": [
             [
-                "f5fc4ede96d18804"
+                "9f05c0fb6c1d7a24"
             ]
         ]
     },
@@ -2892,14 +2733,10 @@
         "id": "b587d44deb51ed07",
         "type": "inject",
         "z": "37c940bbb3d03df0",
-        "name": "Start Cal TX En/Dis",
+        "name": "Start Cal TX Dis",
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
         "repeat": "",
@@ -2909,8 +2746,8 @@
         "topic": "",
         "payload": "0",
         "payloadType": "num",
-        "x": 130,
-        "y": 180,
+        "x": 120,
+        "y": 320,
         "wires": [
             [
                 "254f9303ef05eb7f"
@@ -2943,8 +2780,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 310,
-        "y": 180,
+        "x": 290,
+        "y": 320,
         "wires": [
             [
                 "ea775e8fc4c15881",
@@ -2966,8 +2803,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1060,
-        "y": 40,
+        "x": 1240,
+        "y": 240,
         "wires": []
     },
     {
@@ -2992,14 +2829,16 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 290,
-        "y": 260,
+        "x": 210,
+        "y": 200,
         "wires": [
             [
-                "43700747a4a37461"
+                "43700747a4a37461",
+                "3388ed429c90ade0"
             ],
             [
-                "34798f7c0cee4d0c"
+                "34798f7c0cee4d0c",
+                "32648553aff5b07a"
             ]
         ]
     },
@@ -3007,13 +2846,13 @@
         "id": "34798f7c0cee4d0c",
         "type": "change",
         "z": "37c940bbb3d03df0",
-        "name": "ATT=0",
+        "name": "ATT=10",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "0",
+                "to": "10",
                 "tot": "num"
             }
         ],
@@ -3022,12 +2861,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 470,
+        "x": 460,
         "y": 280,
         "wires": [
             [
-                "c10c81089d8187da",
-                "4ef8de896d9ba931"
+                "c10c81089d8187da"
             ]
         ]
     },
@@ -3050,12 +2888,146 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 450,
+        "x": 430,
         "y": 240,
         "wires": [
             [
-                "c10c81089d8187da",
-                "4ef8de896d9ba931"
+                "c10c81089d8187da"
+            ]
+        ]
+    },
+    {
+        "id": "8a3b809a87d3937f",
+        "type": "inject",
+        "z": "37c940bbb3d03df0",
+        "name": "Start Freq 6GHz",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "6000000",
+        "payloadType": "num",
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "2f5bd29957c47a8f"
+            ]
+        ]
+    },
+    {
+        "id": "7c3c6857726a5890",
+        "type": "comment",
+        "z": "37c940bbb3d03df0",
+        "name": "Calibration",
+        "info": "",
+        "x": 520,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "3388ed429c90ade0",
+        "type": "change",
+        "z": "37c940bbb3d03df0",
+        "name": "F=6 Ghz",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "6000000",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "2f5bd29957c47a8f"
+            ]
+        ]
+    },
+    {
+        "id": "32648553aff5b07a",
+        "type": "change",
+        "z": "37c940bbb3d03df0",
+        "name": "F=500MHz",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "500000",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 200,
+        "wires": [
+            [
+                "2f5bd29957c47a8f"
+            ]
+        ]
+    },
+    {
+        "id": "9f05c0fb6c1d7a24",
+        "type": "http request",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8090/RPC2",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1090,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "38b2db83f6330bb6",
+        "type": "http request",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8090/RPC2",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1090,
+        "y": 240,
+        "wires": [
+            [
+                "f57d97a69f370c97"
             ]
         ]
     }
