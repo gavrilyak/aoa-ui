@@ -770,7 +770,7 @@
         "width": 2,
         "height": 2,
         "gtype": "gage",
-        "title": "Angle1 HF",
+        "title": "Angle1 30",
         "label": "degrees",
         "format": "{{value}}",
         "min": 0,
@@ -784,7 +784,7 @@
         "seg2": "155",
         "diff": false,
         "className": "",
-        "x": 830,
+        "x": 820,
         "y": 220,
         "wires": []
     },
@@ -798,7 +798,7 @@
         "width": 2,
         "height": 2,
         "gtype": "gage",
-        "title": "Angle2 HF",
+        "title": "Angle2 150",
         "label": "degrees",
         "format": "{{value}}",
         "min": 0,
@@ -826,7 +826,7 @@
         "width": 2,
         "height": 2,
         "gtype": "gage",
-        "title": "Angle3 HF",
+        "title": "Angle3 270",
         "label": "degrees",
         "format": "{{value}}",
         "min": 0,
@@ -1195,7 +1195,7 @@
         "width": 3,
         "height": 3,
         "gtype": "compass",
-        "title": "DoA 309-535M",
+        "title": "DoA 700-1183M",
         "label": "Degree",
         "format": "{{value}}",
         "min": 0,
@@ -1235,7 +1235,7 @@
         "id": "8c5e56d4758c7d25",
         "type": "inject",
         "z": "0bd8457dda61dcf8",
-        "name": "Start Freq 500000",
+        "name": "Start Freq 846600",
         "props": [
             {
                 "p": "payload"
@@ -1246,7 +1246,7 @@
         "once": true,
         "onceDelay": "0.5",
         "topic": "",
-        "payload": "500000",
+        "payload": "846600",
         "payloadType": "num",
         "x": 130,
         "y": 20,
@@ -1310,7 +1310,7 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "label": "Signal Direction 309-535M",
+        "label": "Signal Direction 700-1183M",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -1339,7 +1339,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1060,
+        "x": 1120,
         "y": 1140,
         "wires": [
             []
@@ -1393,6 +1393,7 @@
         "id": "c0fab36df52812bf",
         "type": "ui_chart",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "",
         "group": "c0c88598f376b790",
         "order": 6,
@@ -1442,7 +1443,7 @@
         "order": 8,
         "width": 3,
         "height": 3,
-        "label": "DoA 309-535M",
+        "label": "DoA 700-1183M",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -1481,6 +1482,7 @@
         "id": "2a394f728c6479e3",
         "type": "ui_gauge",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "",
         "group": "c0c88598f376b790",
         "order": 5,
@@ -1553,7 +1555,8 @@
             [
                 "0aec400b0c996d3d",
                 "a19db888ac5af038",
-                "5b6f2f976ef9c9fd"
+                "5b6f2f976ef9c9fd",
+                "1c0d5f761fe2bb26"
             ]
         ]
     },
@@ -1590,6 +1593,7 @@
         "id": "a19db888ac5af038",
         "type": "change",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "get angle",
         "rules": [
             {
@@ -1609,9 +1613,9 @@
         "y": 1080,
         "wires": [
             [
-                "d596e54121afe26c",
                 "09f6ab3a1f68aa4d",
-                "72606d05f808bbdb"
+                "72606d05f808bbdb",
+                "d596e54121afe26c"
             ]
         ]
     },
@@ -1717,7 +1721,7 @@
         "id": "bb1b6e8d17f9fc48",
         "type": "inject",
         "z": "0bd8457dda61dcf8",
-        "name": "Start Gain 40",
+        "name": "Start Gain 52",
         "props": [
             {
                 "p": "payload"
@@ -1728,7 +1732,7 @@
         "once": true,
         "onceDelay": "0.5",
         "topic": "",
-        "payload": "40",
+        "payload": "52",
         "payloadType": "num",
         "x": 120,
         "y": 60,
@@ -1780,8 +1784,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 340,
-        "y": 1180,
+        "x": 360,
+        "y": 1280,
         "wires": [
             [
                 "6156106a2fc6a705",
@@ -2134,6 +2138,7 @@
         "id": "56c0f0f7b0fd6af4",
         "type": "ui_gauge",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "",
         "group": "52a3b3d856fb2081",
         "order": 4,
@@ -2162,6 +2167,7 @@
         "id": "bc567ca7c6aee2b2",
         "type": "ui_gauge",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "",
         "group": "52a3b3d856fb2081",
         "order": 5,
@@ -2190,6 +2196,7 @@
         "id": "d20a712684079a6c",
         "type": "ui_gauge",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "",
         "group": "52a3b3d856fb2081",
         "order": 6,
@@ -2459,6 +2466,7 @@
         "id": "467e754e59ba7b4d",
         "type": "ui_chart",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "",
         "group": "fef26fd1ecac0a7a",
         "order": 2,
@@ -2537,12 +2545,50 @@
         "finalize": "",
         "libs": [],
         "x": 620,
-        "y": 1200,
+        "y": 1280,
         "wires": [
             [
                 "c0fab36df52812bf",
-                "2a394f728c6479e3",
-                "467e754e59ba7b4d"
+                "467e754e59ba7b4d",
+                "2a394f728c6479e3"
+            ]
+        ]
+    },
+    {
+        "id": "3a99e51885e18543",
+        "type": "debug",
+        "z": "0bd8457dda61dcf8",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1280,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "1c0d5f761fe2bb26",
+        "type": "function",
+        "z": "0bd8457dda61dcf8",
+        "name": "Function toRealAngle(Offset)",
+        "func": "function toRealAngle(offset, x) {\n    return (((x + 360) % 360) + offset) % 360;\n}\nmsg.payload = toRealAngle(msg.payload.offset, msg.payload.angle)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 1200,
+        "wires": [
+            [
+                "09f6ab3a1f68aa4d",
+                "d596e54121afe26c",
+                "72606d05f808bbdb"
             ]
         ]
     },
