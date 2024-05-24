@@ -16,9 +16,17 @@
         "env": []
     },
     {
+        "id": "08c8f6c288795939",
+        "type": "tab",
+        "label": "Control",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "cbcb4239ed62258f",
         "type": "ui_tab",
-        "name": "Home   DF-210 Cell Antenna",
+        "name": "Home   DF-210 6LSystems",
         "icon": "dashboard",
         "order": 1,
         "disabled": false,
@@ -129,8 +137,7 @@
         "order": 1,
         "disp": true,
         "width": 6,
-        "collapse": false,
-        "className": ""
+        "collapse": false
     },
     {
         "id": "cf3108690ea4a357",
@@ -149,8 +156,7 @@
         "order": 1,
         "disp": true,
         "width": "6",
-        "collapse": false,
-        "className": ""
+        "collapse": false
     },
     {
         "id": "7155333b10f9baed",
@@ -169,8 +175,7 @@
         "order": 1,
         "disp": true,
         "width": "6",
-        "collapse": false,
-        "className": ""
+        "collapse": false
     },
     {
         "id": "efc6b7eeb943190c",
@@ -180,8 +185,7 @@
         "order": 2,
         "disp": true,
         "width": "6",
-        "collapse": false,
-        "className": ""
+        "collapse": false
     },
     {
         "id": "a6fb18cb9431cb48",
@@ -189,6 +193,29 @@
         "name": "Map",
         "icon": "dashboard",
         "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7e7855b0.7f7884",
+        "type": "arduino-board",
+        "device": "/dev/arduino_mega"
+    },
+    {
+        "id": "10faba9f.553c3d",
+        "type": "ui_group",
+        "name": "Power System",
+        "tab": "deecc535.73cc18",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "deecc535.73cc18",
+        "type": "ui_tab",
+        "name": "Control",
+        "icon": "dashboard",
         "disabled": false,
         "hidden": false
     },
@@ -370,8 +397,6 @@
         ],
         "seg1": "-75",
         "seg2": "-10",
-        "diff": false,
-        "className": "",
         "x": 820,
         "y": 140,
         "wires": []
@@ -435,8 +460,6 @@
         "mode": "number",
         "delay": "1000",
         "topic": "topic",
-        "sendOnBlur": true,
-        "className": "",
         "topicType": "msg",
         "x": 290,
         "y": 20,
@@ -620,8 +643,6 @@
         ],
         "seg1": "-75",
         "seg2": "-10",
-        "diff": false,
-        "className": "",
         "x": 820,
         "y": 260,
         "wires": []
@@ -754,8 +775,6 @@
         ],
         "seg1": "-75",
         "seg2": "-10",
-        "diff": false,
-        "className": "",
         "x": 820,
         "y": 380,
         "wires": []
@@ -782,8 +801,6 @@
         ],
         "seg1": "25",
         "seg2": "155",
-        "diff": false,
-        "className": "",
         "x": 820,
         "y": 220,
         "wires": []
@@ -810,8 +827,6 @@
         ],
         "seg1": "25",
         "seg2": "155",
-        "diff": false,
-        "className": "",
         "x": 830,
         "y": 340,
         "wires": []
@@ -838,8 +853,6 @@
         ],
         "seg1": "25",
         "seg2": "155",
-        "diff": false,
-        "className": "",
         "x": 830,
         "y": 460,
         "wires": []
@@ -1207,8 +1220,6 @@
         ],
         "seg1": "",
         "seg2": "",
-        "diff": false,
-        "className": "",
         "x": 1180,
         "y": 1100,
         "wires": []
@@ -1294,7 +1305,6 @@
         ],
         "outputs": 1,
         "useDifferentColor": false,
-        "className": "",
         "x": 1070,
         "y": 300,
         "wires": [
@@ -1338,7 +1348,6 @@
         ],
         "outputs": 1,
         "useDifferentColor": false,
-        "className": "",
         "x": 1120,
         "y": 1140,
         "wires": [
@@ -1382,7 +1391,6 @@
         ],
         "outputs": 1,
         "useDifferentColor": false,
-        "className": "",
         "x": 1020,
         "y": 940,
         "wires": [
@@ -1427,7 +1435,6 @@
         ],
         "outputs": 1,
         "useDifferentColor": false,
-        "className": "",
         "x": 1180,
         "y": 1200,
         "wires": [
@@ -1471,7 +1478,6 @@
         ],
         "outputs": 1,
         "useDifferentColor": false,
-        "className": "",
         "x": 1180,
         "y": 1060,
         "wires": [
@@ -1501,8 +1507,6 @@
         ],
         "seg1": "",
         "seg2": "",
-        "diff": false,
-        "className": "",
         "x": 1180,
         "y": 1240,
         "wires": []
@@ -1641,8 +1645,6 @@
         ],
         "seg1": "-75",
         "seg2": "-10",
-        "diff": false,
-        "className": "",
         "x": 1160,
         "y": 980,
         "wires": []
@@ -1684,7 +1686,6 @@
         ],
         "outputs": 1,
         "useDifferentColor": false,
-        "className": "",
         "x": 1160,
         "y": 1020,
         "wires": [
@@ -1706,8 +1707,6 @@
         "mode": "number",
         "delay": "1000",
         "topic": "topic",
-        "sendOnBlur": true,
-        "className": "",
         "topicType": "msg",
         "x": 300,
         "y": 60,
@@ -2157,8 +2156,6 @@
         ],
         "seg1": "25",
         "seg2": "155",
-        "diff": false,
-        "className": "",
         "x": 830,
         "y": 620,
         "wires": []
@@ -2186,8 +2183,6 @@
         ],
         "seg1": "25",
         "seg2": "155",
-        "diff": false,
-        "className": "",
         "x": 830,
         "y": 740,
         "wires": []
@@ -2215,8 +2210,6 @@
         ],
         "seg1": "25",
         "seg2": "155",
-        "diff": false,
-        "className": "",
         "x": 830,
         "y": 860,
         "wires": []
@@ -2427,8 +2420,6 @@
         ],
         "seg1": "",
         "seg2": "",
-        "diff": false,
-        "className": "",
         "x": 1200,
         "y": 340,
         "wires": []
@@ -2456,8 +2447,6 @@
         ],
         "seg1": "",
         "seg2": "",
-        "diff": false,
-        "className": "",
         "x": 1190,
         "y": 700,
         "wires": []
@@ -2500,7 +2489,6 @@
         ],
         "outputs": 1,
         "useDifferentColor": false,
-        "className": "",
         "x": 1060,
         "y": 1280,
         "wires": [
@@ -2607,8 +2595,6 @@
         "mode": "number",
         "delay": "1000",
         "topic": "topic",
-        "sendOnBlur": true,
-        "className": "",
         "topicType": "msg",
         "x": 710,
         "y": 80,
@@ -2701,8 +2687,6 @@
         "mode": "number",
         "delay": "1000",
         "topic": "topic",
-        "sendOnBlur": true,
-        "className": "",
         "topicType": "msg",
         "x": 710,
         "y": 140,
@@ -2825,7 +2809,6 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "className": "",
         "x": 290,
         "y": 320,
         "wires": [
@@ -3008,13 +2991,13 @@
         "id": "32648553aff5b07a",
         "type": "change",
         "z": "37c940bbb3d03df0",
-        "name": "F=500MHz",
+        "name": "F=846.600MHz",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "500000",
+                "to": "846600",
                 "tot": "num"
             }
         ],
@@ -3023,7 +3006,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 430,
+        "x": 440,
         "y": 200,
         "wires": [
             [
@@ -3076,5 +3059,1528 @@
                 "f57d97a69f370c97"
             ]
         ]
+    },
+    {
+        "id": "d6c96e01d60ef22d",
+        "type": "arduino out",
+        "z": "08c8f6c288795939",
+        "name": "FAN IO49",
+        "pin": "49",
+        "state": "OUTPUT",
+        "arduino": "7e7855b0.7f7884",
+        "x": 1060,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "7eacf3788507c662",
+        "type": "arduino out",
+        "z": "08c8f6c288795939",
+        "name": "Ext Pow LED IO48",
+        "pin": "48",
+        "state": "OUTPUT",
+        "arduino": "7e7855b0.7f7884",
+        "x": 1090,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d584dc20fac8dab5",
+        "type": "arduino out",
+        "z": "08c8f6c288795939",
+        "name": "System On LED IO47",
+        "pin": "47",
+        "state": "OUTPUT",
+        "arduino": "7e7855b0.7f7884",
+        "x": 1100,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "5e4dbe6875b0c7ba",
+        "type": "arduino in",
+        "z": "08c8f6c288795939",
+        "name": "ADC5 Ext Power",
+        "pin": "5",
+        "state": "ANALOG",
+        "arduino": "7e7855b0.7f7884",
+        "x": 100,
+        "y": 200,
+        "wires": [
+            [
+                "86090df4452c1c81"
+            ]
+        ]
+    },
+    {
+        "id": "dcdf3fe01a200502",
+        "type": "ui_text",
+        "z": "08c8f6c288795939",
+        "d": true,
+        "group": "10faba9f.553c3d",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Voltage",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 560,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "ebd478ae1787a251",
+        "type": "arduino in",
+        "z": "08c8f6c288795939",
+        "name": "ADC1 PCB Temp",
+        "pin": "1",
+        "state": "ANALOG",
+        "arduino": "7e7855b0.7f7884",
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "70e267a6f89cc936"
+            ]
+        ]
+    },
+    {
+        "id": "ac3eeefeb2315f3d",
+        "type": "ui_text",
+        "z": "08c8f6c288795939",
+        "d": true,
+        "group": "10faba9f.553c3d",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperature",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 390,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "792b3456914b691c",
+        "type": "arduino out",
+        "z": "08c8f6c288795939",
+        "name": "Low Power LED IO46",
+        "pin": "46",
+        "state": "OUTPUT",
+        "arduino": "7e7855b0.7f7884",
+        "x": 1100,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "5caff3b4cfd286a7",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "info": "when power drops below some level \nturn on led",
+        "x": 700,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c8966081870c62c3",
+        "type": "debug",
+        "z": "08c8f6c288795939",
+        "name": "boot",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b10ae4964723c409",
+        "type": "status",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "scope": [
+            "d6c96e01d60ef22d",
+            "9e28b1d3d57a8e9a"
+        ],
+        "x": 80,
+        "y": 100,
+        "wires": [
+            [
+                "b421dd5b845b8326"
+            ]
+        ]
+    },
+    {
+        "id": "3d84fdba4f2ade33",
+        "type": "debug",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b421dd5b845b8326",
+        "type": "switch",
+        "z": "08c8f6c288795939",
+        "name": "msg.status.fill == \"green\"",
+        "property": "status.fill",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "green",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 100,
+        "wires": [
+            [
+                "3d84fdba4f2ade33",
+                "5d4da9f7fdc00384"
+            ]
+        ]
+    },
+    {
+        "id": "1005b891297d6250",
+        "type": "link out",
+        "z": "08c8f6c288795939",
+        "name": "arduino_ready",
+        "mode": "link",
+        "links": [
+            "543a6f8e036ce232"
+        ],
+        "x": 595,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "543a6f8e036ce232",
+        "type": "link in",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "links": [
+            "1005b891297d6250"
+        ],
+        "x": 665,
+        "y": 80,
+        "wires": [
+            [
+                "d584dc20fac8dab5",
+                "9e28b1d3d57a8e9a"
+            ]
+        ]
+    },
+    {
+        "id": "5d4da9f7fdc00384",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "set to 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 100,
+        "wires": [
+            [
+                "1005b891297d6250"
+            ]
+        ]
+    },
+    {
+        "id": "056873a524400e6a",
+        "type": "inject",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "on",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 470,
+        "y": 20,
+        "wires": [
+            [
+                "1005b891297d6250"
+            ]
+        ]
+    },
+    {
+        "id": "9354508268139c3b",
+        "type": "inject",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "off",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 470,
+        "y": 60,
+        "wires": [
+            [
+                "1005b891297d6250"
+            ]
+        ]
+    },
+    {
+        "id": "d2f0e48ba894ed69",
+        "type": "switch",
+        "z": "08c8f6c288795939",
+        "name": "Low Bat V<17",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "17",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 580,
+        "y": 560,
+        "wires": [
+            [
+                "af326a0ab42b72f9"
+            ],
+            [
+                "95e741e835522bfc"
+            ]
+        ]
+    },
+    {
+        "id": "5a88fd082eca53ca",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "to voltage",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$ceil(msg.payload / 11.8)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 200,
+        "wires": [
+            [
+                "dcdf3fe01a200502",
+                "9e69dc27378367b2",
+                "20ce753d59dbdf10"
+            ]
+        ]
+    },
+    {
+        "id": "ee3190cdd05d5804",
+        "type": "ui_text",
+        "z": "08c8f6c288795939",
+        "d": true,
+        "group": "10faba9f.553c3d",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "power2",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 560,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a16dbb23fa7cfc0f",
+        "type": "debug",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "af326a0ab42b72f9",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "set to 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 540,
+        "wires": [
+            [
+                "792b3456914b691c"
+            ]
+        ]
+    },
+    {
+        "id": "95e741e835522bfc",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "set to 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 580,
+        "wires": [
+            [
+                "792b3456914b691c"
+            ]
+        ]
+    },
+    {
+        "id": "818ce36d40c0e706",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "to celsius",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$ceil((msg.payload * 0.5) - 55)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 320,
+        "wires": [
+            [
+                "ac3eeefeb2315f3d",
+                "70e24cb852f7bd35",
+                "0483c7b038ed6f46"
+            ]
+        ]
+    },
+    {
+        "id": "86090df4452c1c81",
+        "type": "rbe",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "func": "deadbandEq",
+        "gap": "5",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 260,
+        "y": 200,
+        "wires": [
+            [
+                "5a88fd082eca53ca",
+                "ee3190cdd05d5804"
+            ]
+        ]
+    },
+    {
+        "id": "70e267a6f89cc936",
+        "type": "rbe",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "func": "deadbandEq",
+        "gap": "2",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 260,
+        "y": 320,
+        "wires": [
+            [
+                "818ce36d40c0e706"
+            ]
+        ]
+    },
+    {
+        "id": "70e24cb852f7bd35",
+        "type": "ui_gauge",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "group": "10faba9f.553c3d",
+        "order": 2,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Temperature, C",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#cd0000"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "x": 880,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "9e28b1d3d57a8e9a",
+        "type": "arduino out",
+        "z": "08c8f6c288795939",
+        "name": "PCB Ready LED IO13",
+        "pin": "13",
+        "state": "OUTPUT",
+        "arduino": "7e7855b0.7f7884",
+        "x": 820,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "0e7b166165d465e9",
+        "type": "switch",
+        "z": "08c8f6c288795939",
+        "name": "High BAT V>20",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "20",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 580,
+        "y": 680,
+        "wires": [
+            [
+                "f97d02b3d95f6370"
+            ],
+            [
+                "ab98e3495df5e65a"
+            ]
+        ]
+    },
+    {
+        "id": "f97d02b3d95f6370",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "set to 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 660,
+        "wires": [
+            [
+                "6b97e8973a89f125"
+            ]
+        ]
+    },
+    {
+        "id": "ab98e3495df5e65a",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "set to 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 700,
+        "wires": [
+            [
+                "6b97e8973a89f125"
+            ]
+        ]
+    },
+    {
+        "id": "6b97e8973a89f125",
+        "type": "arduino out",
+        "z": "08c8f6c288795939",
+        "name": "Bat Fully Charged LED IO45",
+        "pin": "45",
+        "state": "OUTPUT",
+        "arduino": "7e7855b0.7f7884",
+        "x": 1080,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "ba870fcec745936c",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "ADC5 Ext Power",
+        "info": "$ceil(msg.payload / 11.8)",
+        "x": 100,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "09acd259ed8a3950",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "ADC1 PCB Temp",
+        "info": "$ceil((msg.payload * 0.5) - 55)",
+        "x": 100,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "3ead8e35207c19e2",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "LED Ready IO13",
+        "info": "",
+        "x": 1000,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "b28eeefbaa64ce67",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "FAN IO49",
+        "info": "",
+        "x": 1180,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "56358fb3eaa1435a",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "Ext Pow LED IO48",
+        "info": "",
+        "x": 1270,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "61684e29d957cffd",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "LED System IO47",
+        "info": "",
+        "x": 1290,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "9c03b51374c7b7ee",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "LED Low Power IO46",
+        "info": "",
+        "x": 1300,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "f5d4224f105c7916",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "LED Full Charge IO45",
+        "info": "",
+        "x": 1300,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "604056bf53f137fa",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "Dashboard",
+        "info": "",
+        "x": 1020,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ca3c12680fb93b4e",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "Dashboard",
+        "info": "",
+        "x": 1020,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "0483c7b038ed6f46",
+        "type": "switch",
+        "z": "08c8f6c288795939",
+        "name": "OverHeat 37",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "37",
+                "vt": "str"
+            },
+            {
+                "t": "gte",
+                "v": "37",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 590,
+        "y": 380,
+        "wires": [
+            [
+                "1eb55161b564f532"
+            ],
+            [
+                "35033f41b9088767"
+            ]
+        ]
+    },
+    {
+        "id": "35033f41b9088767",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "set to 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 420,
+        "wires": [
+            [
+                "d6c96e01d60ef22d",
+                "34f09c117721b1ba"
+            ]
+        ]
+    },
+    {
+        "id": "1eb55161b564f532",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "set to 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 360,
+        "wires": [
+            [
+                "d6c96e01d60ef22d",
+                "34f09c117721b1ba"
+            ]
+        ]
+    },
+    {
+        "id": "34f09c117721b1ba",
+        "type": "arduino out",
+        "z": "08c8f6c288795939",
+        "name": "OverHeat LED IO44",
+        "pin": "44",
+        "state": "OUTPUT",
+        "arduino": "7e7855b0.7f7884",
+        "x": 1100,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "638bb61c817a1eaf",
+        "type": "arduino in",
+        "z": "08c8f6c288795939",
+        "name": "ADC4 RF Detector",
+        "pin": "4",
+        "state": "ANALOG",
+        "arduino": "7e7855b0.7f7884",
+        "x": 110,
+        "y": 480,
+        "wires": [
+            [
+                "7e2fbe21a5409f3d"
+            ]
+        ]
+    },
+    {
+        "id": "8d81577f1b31045a",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "ADC6 BAT CURRENT",
+        "info": "",
+        "x": 120,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "7e2fbe21a5409f3d",
+        "type": "rbe",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "func": "deadbandEq",
+        "gap": "5",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 300,
+        "y": 480,
+        "wires": [
+            [
+                "cfc35204de169125"
+            ]
+        ]
+    },
+    {
+        "id": "c6b796960f35af01",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "Dashboard",
+        "info": "",
+        "x": 1040,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "6b4990fa4e7d2c7b",
+        "type": "arduino in",
+        "z": "08c8f6c288795939",
+        "name": "ADC2 BAT V Charge",
+        "pin": "2",
+        "state": "ANALOG",
+        "arduino": "7e7855b0.7f7884",
+        "x": 110,
+        "y": 620,
+        "wires": [
+            [
+                "ae26af4b646f704b"
+            ]
+        ]
+    },
+    {
+        "id": "ae26af4b646f704b",
+        "type": "rbe",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "func": "deadbandEq",
+        "gap": "5",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 300,
+        "y": 620,
+        "wires": [
+            [
+                "67ae9d358b167647"
+            ]
+        ]
+    },
+    {
+        "id": "651aba1ffaab2e3d",
+        "type": "ui_gauge",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "group": "10faba9f.553c3d",
+        "order": 3,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "BAT V Charge, V",
+        "label": "V",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "23",
+        "colors": [
+            "#cd0000",
+            "#00b500",
+            "#a51d2d"
+        ],
+        "seg1": "16",
+        "seg2": "21",
+        "x": 870,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "ba7bb2b6bee18997",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "Dashboard",
+        "info": "",
+        "x": 1020,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "3c3264d064e38d05",
+        "type": "arduino in",
+        "z": "08c8f6c288795939",
+        "name": "ADC6 BAT CURRENT",
+        "pin": "6",
+        "state": "ANALOG",
+        "arduino": "7e7855b0.7f7884",
+        "x": 120,
+        "y": 820,
+        "wires": [
+            [
+                "fed0776b8c9be575"
+            ]
+        ]
+    },
+    {
+        "id": "fed0776b8c9be575",
+        "type": "rbe",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "func": "deadbandEq",
+        "gap": "2",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 320,
+        "y": 820,
+        "wires": [
+            [
+                "2e0dd56132f8ae8c"
+            ]
+        ]
+    },
+    {
+        "id": "687032c4dc44b1e3",
+        "type": "ui_gauge",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "group": "10faba9f.553c3d",
+        "order": 4,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "BAT I Charge, mA",
+        "label": "I, mA",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "3000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#cd0000"
+        ],
+        "seg1": "1000",
+        "seg2": "2000",
+        "x": 870,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "04f407a6b259bd75",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "Dashboard",
+        "info": "",
+        "x": 1020,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "af71081ae004c393",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "ADC2 BAT V Charge",
+        "info": "",
+        "x": 110,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "bfd660966620bffb",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "ADC4 RF Detector",
+        "info": "",
+        "x": 110,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "cfc35204de169125",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "to voltage",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$ceil((msg.payload / 13) - 30)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 480,
+        "wires": [
+            [
+                "e6a72a13698ab379",
+                "dd8e9506cb122833"
+            ]
+        ]
+    },
+    {
+        "id": "67ae9d358b167647",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "to voltage",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$ceil(msg.payload / 11.8)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 620,
+        "wires": [
+            [
+                "651aba1ffaab2e3d",
+                "d2f0e48ba894ed69",
+                "0e7b166165d465e9",
+                "716249bb27aa349e"
+            ]
+        ]
+    },
+    {
+        "id": "2e0dd56132f8ae8c",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "to voltage",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$ceil(msg.payload * 150)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 820,
+        "wires": [
+            [
+                "687032c4dc44b1e3"
+            ]
+        ]
+    },
+    {
+        "id": "175f687ec8c515b0",
+        "type": "ui_switch",
+        "z": "08c8f6c288795939",
+        "d": true,
+        "name": "",
+        "label": "Charge ON",
+        "tooltip": "",
+        "group": "10faba9f.553c3d",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "x": 130,
+        "y": 680,
+        "wires": [
+            [
+                "8d0cf5b6dfa08369"
+            ]
+        ]
+    },
+    {
+        "id": "8d0cf5b6dfa08369",
+        "type": "arduino out",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "pin": "42",
+        "state": "OUTPUT",
+        "arduino": "7e7855b0.7f7884",
+        "x": 1060,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "9da553d9f776a8cc",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "BAT Charge ON IO42",
+        "info": "",
+        "x": 1220,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "06c5e14fe85125c5",
+        "type": "inject",
+        "z": "08c8f6c288795939",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "off",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 150,
+        "y": 720,
+        "wires": [
+            [
+                "8d0cf5b6dfa08369"
+            ]
+        ]
+    },
+    {
+        "id": "9e69dc27378367b2",
+        "type": "switch",
+        "z": "08c8f6c288795939",
+        "name": "Low Ext V<18",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "18.1",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 540,
+        "y": 260,
+        "wires": [
+            [
+                "5ace9dadd47dae66"
+            ],
+            [
+                "48baf23b038821a6"
+            ]
+        ]
+    },
+    {
+        "id": "5ace9dadd47dae66",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "set to 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 240,
+        "wires": [
+            [
+                "7eacf3788507c662"
+            ]
+        ]
+    },
+    {
+        "id": "48baf23b038821a6",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "set to 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 280,
+        "wires": [
+            [
+                "7eacf3788507c662"
+            ]
+        ]
+    },
+    {
+        "id": "716249bb27aa349e",
+        "type": "switch",
+        "z": "08c8f6c288795939",
+        "name": "High BAT 18>V>20",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "20.5",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            },
+            {
+                "t": "lte",
+                "v": "17.8",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 570,
+        "y": 760,
+        "wires": [
+            [
+                "b4a6aad0592fb1d2"
+            ],
+            [],
+            [
+                "7f66a9a8f7d804f0"
+            ]
+        ]
+    },
+    {
+        "id": "7f66a9a8f7d804f0",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "set to 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 780,
+        "wires": [
+            [
+                "8d0cf5b6dfa08369"
+            ]
+        ]
+    },
+    {
+        "id": "b4a6aad0592fb1d2",
+        "type": "change",
+        "z": "08c8f6c288795939",
+        "name": "set to 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 740,
+        "wires": [
+            [
+                "8d0cf5b6dfa08369"
+            ]
+        ]
+    },
+    {
+        "id": "7fc8ab67df46a540",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "DL_CTRL_V42",
+        "info": "",
+        "x": 80,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "20ce753d59dbdf10",
+        "type": "ui_gauge",
+        "z": "08c8f6c288795939",
+        "name": "",
+        "group": "10faba9f.553c3d",
+        "order": 1,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Ext Voltage, V",
+        "label": "V",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "30",
+        "colors": [
+            "#cd0000",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "15",
+        "seg2": "22",
+        "x": 880,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "e6a72a13698ab379",
+        "type": "ui_text",
+        "z": "08c8f6c288795939",
+        "group": "10faba9f.553c3d",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "RF Detector, dBm",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 890,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "dd8e9506cb122833",
+        "type": "ui_gauge",
+        "z": "08c8f6c288795939",
+        "d": true,
+        "name": "",
+        "group": "10faba9f.553c3d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "RF Detector, dBm",
+        "label": "dBm",
+        "format": "{{value}}",
+        "min": "-30",
+        "max": "15",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "-20",
+        "seg2": "0",
+        "x": 890,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "ba64ce6ca3db3085",
+        "type": "comment",
+        "z": "08c8f6c288795939",
+        "name": "LED Overheat IO44",
+        "info": "",
+        "x": 1290,
+        "y": 420,
+        "wires": []
     }
 ]
