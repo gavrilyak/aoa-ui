@@ -18,7 +18,7 @@
     {
         "id": "08c8f6c288795939",
         "type": "tab",
-        "label": "Control",
+        "label": "Power",
         "disabled": false,
         "info": "",
         "env": []
@@ -26,7 +26,7 @@
     {
         "id": "cbcb4239ed62258f",
         "type": "ui_tab",
-        "name": "Home   DF-210 6LSystems",
+        "name": "Home   DF-210 ColdSkyTech Inc",
         "icon": "dashboard",
         "order": 1,
         "disabled": false,
@@ -136,7 +136,7 @@
         "tab": "cbcb4239ed62258f",
         "order": 1,
         "disp": true,
-        "width": 6,
+        "width": "6",
         "collapse": false
     },
     {
@@ -214,7 +214,7 @@
     {
         "id": "deecc535.73cc18",
         "type": "ui_tab",
-        "name": "Control",
+        "name": "Power",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
