@@ -388,15 +388,15 @@
         "title": "Power 1",
         "label": "dB",
         "format": "{{value}}",
-        "min": "-100",
-        "max": "20",
+        "min": "-35",
+        "max": "35",
         "colors": [
             "#1c71d8",
             "#2ec27e",
             "#ed333b"
         ],
-        "seg1": "-75",
-        "seg2": "-10",
+        "seg1": "0",
+        "seg2": "20",
         "x": 820,
         "y": 280,
         "wires": []
@@ -634,15 +634,15 @@
         "title": "Power 2",
         "label": "dB",
         "format": "{{value}}",
-        "min": "-100",
-        "max": "20",
+        "min": "-35",
+        "max": "35",
         "colors": [
             "#1c71d8",
             "#2ec27e",
             "#ed333b"
         ],
-        "seg1": "-75",
-        "seg2": "-10",
+        "seg1": "0",
+        "seg2": "20",
         "x": 820,
         "y": 400,
         "wires": []
@@ -766,15 +766,15 @@
         "title": "Power 3",
         "label": "dB",
         "format": "{{value}}",
-        "min": "-100",
-        "max": "20",
+        "min": "-35",
+        "max": "35",
         "colors": [
             "#1c71d8",
             "#2ec27e",
             "#ed333b"
         ],
-        "seg1": "-75",
-        "seg2": "-10",
+        "seg1": "0",
+        "seg2": "20",
         "x": 820,
         "y": 520,
         "wires": []
@@ -1208,7 +1208,7 @@
         "width": 3,
         "height": 3,
         "gtype": "compass",
-        "title": "DoA 700-1183M",
+        "title": "DoA 590-960M",
         "label": "Degree",
         "format": "{{value}}",
         "min": 0,
@@ -1246,7 +1246,7 @@
         "id": "8c5e56d4758c7d25",
         "type": "inject",
         "z": "0bd8457dda61dcf8",
-        "name": "Start Freq 1800000000",
+        "name": "Start Freq 90000000",
         "props": [
             {
                 "p": "payload"
@@ -1257,9 +1257,9 @@
         "once": true,
         "onceDelay": "0.5",
         "topic": "",
-        "payload": "1800000",
+        "payload": "900000",
         "payloadType": "num",
-        "x": 150,
+        "x": 140,
         "y": 20,
         "wires": [
             [
@@ -1320,7 +1320,7 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "label": "Signal Direction 700-1183M",
+        "label": "Signal Direction 590-960M",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -1370,7 +1370,7 @@
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
-        "ymin": "-75",
+        "ymin": "-35",
         "ymax": "35",
         "removeOlder": "10",
         "removeOlderPoints": "",
@@ -1450,7 +1450,7 @@
         "order": 6,
         "width": 3,
         "height": 3,
-        "label": "DoA 700-1183M",
+        "label": "DoA 590-960M",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -1495,7 +1495,7 @@
         "width": 3,
         "height": 3,
         "gtype": "compass",
-        "title": "DoA 120-309M",
+        "title": "DoA 590-960M",
         "label": "Degree",
         "format": "{{value}}",
         "min": 0,
@@ -1508,7 +1508,7 @@
         "seg1": "",
         "seg2": "",
         "x": 1180,
-        "y": 1280,
+        "y": 1320,
         "wires": []
     },
     {
@@ -1636,15 +1636,15 @@
         "title": "RF Power",
         "label": "dBm",
         "format": "{{value}}",
-        "min": "-75",
-        "max": "32",
+        "min": "-35",
+        "max": "35",
         "colors": [
             "#1a5fb4",
             "#26a269",
             "#ca3838"
         ],
-        "seg1": "-40",
-        "seg2": "-10",
+        "seg1": "0",
+        "seg2": "20",
         "x": 1160,
         "y": 1080,
         "wires": []
@@ -1665,8 +1665,8 @@
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
-        "ymin": "-100",
-        "ymax": "20",
+        "ymin": "-35",
+        "ymax": "35",
         "removeOlder": "5",
         "removeOlderPoints": "",
         "removeOlderUnit": "1",
@@ -1745,6 +1745,7 @@
         "id": "62ef055482ac1e8a",
         "type": "http request",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "angle360-c Coh",
         "method": "GET",
         "ret": "bin",
@@ -1776,6 +1777,7 @@
         "id": "7779d52a91fe13b1",
         "type": "function",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "parseAngleAndPower",
         "func": "//msg.headers[\"content-range\"]: \"bytes 6040764-6040767/6040768\"\n\nlet buf= msg.payload;\nmsg.payload = {\n    angle: buf.readInt16LE(4),\n    power: buf.readInt16LE(6),\n    offset: buf.readInt16LE(8),\n}\nreturn msg;",
         "outputs": 1,
@@ -1822,6 +1824,7 @@
         "id": "5dc45cfbbe0ecbbd",
         "type": "http request",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "angleC1 Non-Coh",
         "method": "GET",
         "ret": "bin",
@@ -1853,6 +1856,7 @@
         "id": "a1870d5d34e955d4",
         "type": "function",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "parseAngleAndPower",
         "func": "//msg.headers[\"content-range\"]: \"bytes 6040764-6040767/6040768\"\n\nlet buf= msg.payload;\nmsg.payload = {\n    angle: buf.readInt16LE(4),\n    power: buf.readInt16LE(6),\n    offset: buf.readInt16LE(8),\n}\nreturn msg;",
         "outputs": 1,
@@ -1874,6 +1878,7 @@
         "id": "cb6095331baed0c6",
         "type": "change",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "get angle",
         "rules": [
             {
@@ -1927,6 +1932,7 @@
         "id": "dab8ea1a46649dba",
         "type": "http request",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "angleC2 Non-Coh",
         "method": "GET",
         "ret": "bin",
@@ -1958,6 +1964,7 @@
         "id": "25a912a72b48dad0",
         "type": "function",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "parseAngleAndPower",
         "func": "//msg.headers[\"content-range\"]: \"bytes 6040764-6040767/6040768\"\n\nlet buf= msg.payload;\nmsg.payload = {\n    angle: buf.readInt16LE(4),\n    power: buf.readInt16LE(6),\n    offset: buf.readInt16LE(8),\n}\nreturn msg;",
         "outputs": 1,
@@ -1979,6 +1986,7 @@
         "id": "b3ce371c8ce0288c",
         "type": "change",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "get angle",
         "rules": [
             {
@@ -2032,6 +2040,7 @@
         "id": "2fa0a11baf74bd0b",
         "type": "http request",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "angleC3 Non-Coh",
         "method": "GET",
         "ret": "bin",
@@ -2063,6 +2072,7 @@
         "id": "f7577c6988514e78",
         "type": "function",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "parseAngleAndPower",
         "func": "//msg.headers[\"content-range\"]: \"bytes 6040764-6040767/6040768\"\n\nlet buf= msg.payload;\nmsg.payload = {\n    angle: buf.readInt16LE(4),\n    power: buf.readInt16LE(6),\n    offset: buf.readInt16LE(8),\n}\nreturn msg;",
         "outputs": 1,
@@ -2084,6 +2094,7 @@
         "id": "d745b81c1680784d",
         "type": "change",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "get angle",
         "rules": [
             {
@@ -2525,6 +2536,7 @@
         "id": "09d8c28fb13c0da3",
         "type": "function",
         "z": "0bd8457dda61dcf8",
+        "d": true,
         "name": "Function toRealAngle(Offset)",
         "func": "function toRealAngle(offset, x) {\n    return (((x + 360) % 360) + offset) % 360;\n}\nmsg.payload = toRealAngle(msg.payload.offset, msg.payload.angle)\nreturn msg",
         "outputs": 1,
@@ -2951,9 +2963,8 @@
         "id": "f57d97a69f370c97",
         "type": "debug",
         "z": "37c940bbb3d03df0",
-        "d": true,
         "name": "debug 5",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2961,8 +2972,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1240,
-        "y": 240,
+        "x": 1280,
+        "y": 380,
         "wires": []
     },
     {
@@ -3120,13 +3131,13 @@
         "id": "32648553aff5b07a",
         "type": "change",
         "z": "37c940bbb3d03df0",
-        "name": "F=1800.000MHz",
+        "name": "F=900.000MHz",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "1800000",
+                "to": "900000",
                 "tot": "num"
             }
         ],
@@ -3135,7 +3146,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 450,
+        "x": 440,
         "y": 200,
         "wires": [
             [
@@ -3184,8 +3195,176 @@
         "x": 1090,
         "y": 240,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "787194c696b38560",
+        "type": "template",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<methodCall>\n    <methodName>set_enable_rec_samples</methodName>\n    <params>\n      <param>\n        <value>\n            <int>{{payload}}</int>\n        </value>\n       </param>\n    </params>\n</methodCall>\n",
+        "output": "str",
+        "x": 920,
+        "y": 380,
+        "wires": [
+            [
+                "f8763576c1263f9f"
+            ]
+        ]
+    },
+    {
+        "id": "f8763576c1263f9f",
+        "type": "http request",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost/aoa/RPC2",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1090,
+        "y": 380,
+        "wires": [
             [
                 "f57d97a69f370c97"
+            ]
+        ]
+    },
+    {
+        "id": "c20ae332f187d796",
+        "type": "ui_button",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "group": "52a3b3d856fb2081",
+        "order": 14,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "FFT SNAPSHOT",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 510,
+        "y": 380,
+        "wires": [
+            [
+                "b7d923d823bd3136"
+            ]
+        ]
+    },
+    {
+        "id": "953ae0d79555f5f2",
+        "type": "ui_button",
+        "z": "37c940bbb3d03df0",
+        "d": true,
+        "name": "",
+        "group": "52a3b3d856fb2081",
+        "order": 15,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "STOP REC",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 490,
+        "y": 460,
+        "wires": [
+            [
+                "787194c696b38560"
+            ]
+        ]
+    },
+    {
+        "id": "0b4533e23e84b72a",
+        "type": "ui_button",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "group": "52a3b3d856fb2081",
+        "order": 15,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "RM REC",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 480,
+        "y": 540,
+        "wires": [
+            [
+                "44171c875dceba90"
+            ]
+        ]
+    },
+    {
+        "id": "44171c875dceba90",
+        "type": "exec",
+        "z": "37c940bbb3d03df0",
+        "command": "sh -c 'rm /var/tmp/aoa-rec/1/*'",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 760,
+        "y": 540,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b7d923d823bd3136",
+        "type": "trigger",
+        "z": "37c940bbb3d03df0",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "num",
+        "op2type": "num",
+        "duration": "1250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 740,
+        "y": 380,
+        "wires": [
+            [
+                "787194c696b38560"
             ]
         ]
     },
