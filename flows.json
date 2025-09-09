@@ -26,7 +26,7 @@
     {
         "id": "cbcb4239ed62258f",
         "type": "ui_tab",
-        "name": "Home   DF-210 ColdSkyTech Inc (df-ca10)",
+        "name": "Home   DF-210 ColdSkyTech Inc (df)",
         "icon": "dashboard",
         "order": 1,
         "disabled": false,
@@ -142,7 +142,7 @@
     {
         "id": "cf3108690ea4a357",
         "type": "ui_tab",
-        "name": "Charts (df-ca10)",
+        "name": "Charts (df)",
         "icon": "dashboard",
         "order": 2,
         "disabled": false,
@@ -161,7 +161,7 @@
     {
         "id": "7155333b10f9baed",
         "type": "ui_tab",
-        "name": "Calibration (df-ca10)",
+        "name": "Calibration (df)",
         "icon": "dashboard",
         "order": 4,
         "disabled": false,
@@ -214,7 +214,7 @@
     {
         "id": "deecc535.73cc18",
         "type": "ui_tab",
-        "name": "Power (df-ca10)",
+        "name": "Power (df)",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
